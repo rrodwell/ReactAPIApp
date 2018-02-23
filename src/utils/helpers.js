@@ -5,7 +5,7 @@ import qs from 'qs';
 import axios from "axios";
 
 //Require keys
-import keys from "../../qTestKeys";
+// import keys from "../../qTestKeys";
 
 const helpers = {
 
@@ -22,31 +22,35 @@ const helpers = {
 
         const header = {
             "Authorization": "Basic " + base64.encode(credentials.email + ":"),
-            "Content-Type": "application/x-www-form-urlencoded"
+            "Content-Type": "application/x-www-form-urlencoded",
         }
 
         const obj = {
             method: "POST", // or "PUT"
             headers: header,
-            body: data,
-            mode: "no-cors"
+            body: data
         }
 
 
         let token;
 
-        fetch(url, obj).then(res => res)
+        fetch(url, obj).then(res => res.json())
             .catch(error => console.error("Error:", error))
             .then(loginResponse => {
-                token = loginResponse.access_token;
-                console.log("Success:", JSON.stringify(loginResponse));
+                if (loginResponse.access_token != null){
+                    token = loginResponse.access_token;
+                    // console.log("Success:", loginResponse);
+                    console.log("Token", token);
+                    sessionStorage.setItem("token",token);
+                } else {
+                    alert("Incorrect Credential!")
+                }
             });
 
-        // console.log("Token",token);
         // console.log("URL", url);
         // console.log("Data", data);
         // console.log("Header", header);
-        console.log("New Obj", obj);
+        // console.log("New Obj", obj);
     },
 
     // axiosAuthenticateUser: function (credentials) {
