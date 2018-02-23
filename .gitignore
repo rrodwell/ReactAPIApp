@@ -56,4 +56,8 @@ typings/
 
 # dotenv environment variables file
 .env
+./qTestKeys.js
+./keys.js
+.history/
+.routes/
 
