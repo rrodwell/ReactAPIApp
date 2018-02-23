@@ -28,7 +28,8 @@ const helpers = {
         const obj = {
             method: "POST", // or "PUT"
             headers: header,
-            body: data
+            body: data,
+            mode: "no-cors"
         }
 
 
