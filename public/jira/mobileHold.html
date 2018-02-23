@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CFA IDEV JIRA</title>
+    <meta http-equiv="Content-Type" Content="text/html; charset=UTF-8">
+
+    <script>
+        window.WRM = window.WRM || {}; window.WRM._unparsedData = window.WRM._unparsedData || {}; window.WRM._unparsedErrors = window.WRM._unparsedErrors || {};
+        WRM._unparsedData["com.atlassian.plugins.atlassian-plugins-webresource-plugin:context-path.context-path"] = "\"/jira\"";
+        WRM._unparsedData["com.atlassian.plugins.atlassian-plugins-webresource-rest:web-resource-manager.resource-base-url-pattern"] = "\"(?:/jira(?:/s/.*?/_)?/download)\"";
+        WRM._unparsedData["jira.webresources:feature-flags.feature-flag-data"] = "{\"enabled-feature-keys\":[\"nps.survey.inline.dialog\",\"com.atlassian.jira.config.PDL\",\"jira.plugin.devstatus.phasetwo.enabled\",\"jira.frother.reporter.field\",\"atlassian.aui.raphael.disabled\",\"jira.plugin.devstatus.phasetwo\",\"frother.assignee.field\",\"app-switcher.new\",\"atlassian.rest.xsrf.legacy.enabled\",\"com.atlassian.jira.projects.ProjectCentricNavigation.Switch\",\"com.atlassian.jira.config.CoreFeatures.LICENSE_ROLES_ENABLED\",\"jira.issue.status.lozenge\"],\"feature-flag-states\":{\"jira.issue.search.jql.timing.databaseprimary\":false,\"jira.feature.flag.board\":false,\"jira.shared.portalpage.search.databaseprimary\":false,\"jira.shared.portalpage.search.indexprimary\":false,\"jira.instrumentation.laas\":false,\"jira.shared.searchrequest.database.search\":false,\"jira.issue.search.jql.timing.indexprimary\":false,\"jira.shared.portalpage.search.indexonly\":true,\"jira.create.linked.issue\":true,\"jira.issue.search.jql.timing.indexonly\":true}}";
+        WRM._unparsedData["jira.webresources:default-comment-security-level.DefaultCommentSecurityLevelHelpLink"] = "{\"extraClasses\":\"default-comment-level-help\",\"title\":\"Commenting on an Issue\",\"url\":\"https://docs.atlassian.com/jira/jsw-docs-071/Commenting+on+an+Issue#Default-Comment-Security-Level\",\"isLocal\":false}";
+        WRM._unparsedData["tzdetect.pref.auto.detect"] = "true";
+        WRM._unparsedData["tzdetect.pref.tzid"] = "\"America/New_York\"";
+        WRM._unparsedData["tzdetect.pref.tzname"] = "\"(GMT-05:00) New York\"";
+        WRM._unparsedData["tzdetect.pref.janOffset"] = "-18000000";
+        WRM._unparsedData["tzdetect.pref.julyOffset"] = "-14400000";
+        if (window.WRM._dataArrived) window.WRM._dataArrived();</script>
+    <link type="text/css" rel="stylesheet" href="https://idevtools.cfahome.com/jira/s/e50f8a9b04a02ecda2813ec162fc82f7-CDN/en_USr3mt8b/71011/b6b48b2829824b869586ac216d119363/0c798f90b1a61deafa1d5193fc512be9/_/download/contextbatch/css/_super/batch.css?atlassian.aui.raphael.disabled=true"
+        media="all">
+    <!--[if lte IE 9]>
+<link type="text/css" rel="stylesheet" href="https://idevtools.cfahome.com/jira/s/e50f8a9b04a02ecda2813ec162fc82f7-CDN/en_USr3mt8b/71011/b6b48b2829824b869586ac216d119363/0c798f90b1a61deafa1d5193fc512be9/_/download/contextbatch/css/_super/batch.css?atlassian.aui.raphael.disabled=true&amp;conditionalComment=lte+IE+9"  media="all">
+<![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://idevtools.cfahome.com/jira/s/2282f5e74a656470fdd2cd42983645d0-CDN/en_USr3mt8b/71011/b6b48b2829824b869586ac216d119363/5.7.46/_/download/batch/com.atlassian.auiplugin:aui-experimental-labels/com.atlassian.auiplugin:aui-experimental-labels.css"
+        media="all">
+    <link type="text/css" rel="stylesheet" href="https://idevtools.cfahome.com/jira/s/ffcf7fefeeed0aa6d97db2864961822c-CDN/en_USr3mt8b/71011/b6b48b2829824b869586ac216d119363/1.0/_/download/batch/jira.webresources:global-static/jira.webresources:global-static.css"
+        media="all">
+    <script type="text/javascript" src="https://idevtools.cfahome.com/jira/s/4ab48cb751f33cb1dbf868a0644111dd-CDN/en_USr3mt8b/71011/b6b48b2829824b869586ac216d119363/0c798f90b1a61deafa1d5193fc512be9/_/download/contextbatch/js/_super/batch.js?atlassian.aui.raphael.disabled=true&amp;locale=en-US"></script>
+    <script type="text/javascript" src="https://idevtools.cfahome.com/jira/s/fd0c828e5053e60b6e4b800aac11508a-CDN/en_USr3mt8b/71011/b6b48b2829824b869586ac216d119363/2.3.1/_/download/batch/com.atlassian.jira.jira-tzdetect-plugin:tzdetect-lib/com.atlassian.jira.jira-tzdetect-plugin:tzdetect-lib.js?locale=en-US"></script>
+
+    <style type="text/css">
+        .tableBorder,
+        .grid {
+            background-color: #fff;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .tableBorder td,
+        .grid td {
+            vertical-align: top;
+            padding: 2px;
+            border: 1px solid #ccc;
+        }
+
+        .noPadding {
+            padding: 0 !important;
+        }
+
+        h3 .subText {
+            font-size: 60%;
+            font-weight: normal;
+        }
+
+        .tabLabel {
+            font-weight: bold;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            padding: 2px;
+            display: inline;
+        }
+
+        td.blank {
+            padding: 0;
+            margin: 0;
+        }
+
+        .blank td {
+            border: none;
+        }
+
+        #descriptionArea {
+            margin: 0;
+            padding: 2px;
+            border: 1px solid #ccc;
+        }
+
+        hr {
+            border-top: 1px solid #aaa;
+        }
+
+        hr.fullcontent {
+            height: 15px;
+            padding: 10px 0;
+            background: #fff url('https://idevtools.cfahome.com/jira/images/icons/hr.gif') no-repeat scroll center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header id="previous-view">
+        <nav class="aui-toolbar">
+            <div class="toolbar-split toolbar-split-right">
+                <ul class="toolbar-group">
+                    <li class="toolbar-item">
+                        <a href="https://idevtools.cfahome.com/jira/issues/?jql=issuetype+%3D+Test+AND+creator+in+%28grant.parker%29" class="toolbar-trigger">Back to previous view</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <table class="tableBorder" cellpadding="0" cellspacing="0" border="0" width="100%">
+        <tr>
+            <td bgcolor="#f0f0f0" width="100%" colspan="2" valign="top">
+                <h3 class="formtitle">
+                    [QLSP-327]&nbsp;
+                    <a href="https://idevtools.cfahome.com/jira/browse/QLSP-327">iPOS - CM - Mobile Order Hold</a>
+                    <span class="subText">
+                        Created: 14/Aug/17 &nbsp;Updated: 14/Aug/17
+
+                    </span>
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td width="20%">
+                <b>Status:</b>
+            </td>
+            <td width="80%">Open</td>
+        </tr>
+        <tr>
+            <td width="20%">
+                <b>Project:</b>
+            </td>
+            <td width="80%">
+                <a href="https://idevtools.cfahome.com/jira/secure/BrowseProject.jspa?id=11405">Quality ServicePoint</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <b>Component/s:</b>
+            </td>
+            <td>
+                None
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <b>Affects Version/s:</b>
+            </td>
+            <td>
+                None
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <b>Fix Version/s:</b>
+            </td>
+            <td>
+                None
+            </td>
+        </tr>
+
+    </table>
+
+    <br />
+    <table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+        <tr>
+            <td bgcolor="#f0f0f0" valign="top" width="20%">
+                <b>Type:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" width="30%">
+                Test
+            </td>
+
+            <td bgcolor="#f0f0f0">
+                <b>Priority:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap>
+                3.Medium
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#f0f0f0" valign="top" width="20%">
+                <b>Reporter:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" width="30%">
+                <a class="user-hover" rel="grant.parker" id="word_reporter_grant.parker" href="https://idevtools.cfahome.com/jira/secure/ViewProfile.jspa?name=grant.parker">Grant Parker</a>
+            </td>
+
+            <td bgcolor="#f0f0f0" width="20%">
+                <b>Assignee:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap width="30%">
+                <a class="user-hover" rel="grant.parker" id="word_assignee_grant.parker" href="https://idevtools.cfahome.com/jira/secure/ViewProfile.jspa?name=grant.parker">Grant Parker</a>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#f0f0f0" width="20%">
+                <b>Resolution:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+                Unresolved
+            </td>
+            <td bgcolor="#f0f0f0" width="20%">
+                <b>Votes:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+                0
+            </td>
+
+        </tr>
+
+        <tr>
+            <td bgcolor="#f0f0f0" width="20%">
+                <b>Labels:</b>
+            </td>
+            <td id="labels-38724-value" class="value" bgcolor="#ffffff" valign="top" colspan="3" nowrap>
+                None
+            </td>
+        </tr>
+
+        <tr>
+            <td bgcolor="#f0f0f0" width="20%">
+                <b>Remaining Estimate:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                Not Specified
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#f0f0f0" width="20%">
+                <b>Time Spent:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                Not Specified
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#f0f0f0" width="20%">
+                <b>Original Estimate:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                Not Specified
+            </td>
+        </tr>
+
+    </table>
+
+
+
+    <br />
+
+    <table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+
+
+
+
+
+
+
+        <tr>
+            <td bgcolor="#f0f0f0" width="20%" valign="top">
+                <b>Zephyr Teststep:</b>
+            </td>
+            <td id="customfield_10000-38724-value" class="value" bgcolor="#ffffff" width="80%">
+                <div>
+                    <table id="project-config-steps-table" class="aui">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Test Step</th>
+                                <th>Test Data</th>
+                                <th>Expected Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <p>Send 5 mobile orders to the lab with out checking them in - This may require submitting
+                                        one order prior to each test.</p>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <p>Orders are submitted and are now in the Mobile order deferred order queue </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>
+                                    <p>Sign into an iPOS or POS Next tablet with a Receipt type of Receipt-DT-iPOS</p>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <p>User is signed in</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>
+                                    <p>Recall one of the orders from the Mobile order queue</p>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <p>The order is recalled and the correct items are on the order</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>
+                                    <p>Tap the Hold button. </p>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <p>The order is placed on Hold and the hold button displays on the roof bar with a 1.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>
+                                    <p>Tap the Hold button on the roof bar. Tap Yes to the prompt to store.</p>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <p>The mobile order is stored in the store recall queue</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>
+                                    <p>Verify the KPS displays the order correctly with the Mobile Header and correct items.
+                                        Also Verify that the order is in the recall queue by navigating to Other functions&gt;Recall
+                                        By transaction number. </p>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <p>The order is displayed correctly and is in the recall queue</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>
+                                    <p>Recall the next mobile order and place it on hold, Create another normal order and store
+                                        the order</p>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <p>The mobile held order is stored first then the second order. Confirmable on the KPS and
+                                        in the recall queue</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>
+                                    <p>Recall the next Mobile order and place it on hold. Enter and place a standard order on
+                                        hold. Press the hold button on the roof bar. </p>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <p>Both orders are stored, Mobile order first then Standard order</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>
+                                    <p>Recall the next Mobile order, Place the order on hold. Attempt to sign out.</p>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <p>Sign out is blocked because there is an order on hold</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>
+                                    <p>Swipe a manager card on a connected payment terminal. </p>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <p>User sign out is blocked because of the order on hold</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>
+                                    <p>Recall the last mobile order and place it on hold as well. </p>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <p>There are now two orders on hold</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>
+                                    <p>Begin and store a standard deferred order. </p>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <p>Storing the deferred order does not store the held orders.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>
+                                    <p>Tap the hold button on the roof bar. </p>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <p>Both mobile orders are stored and displayed on the KPS</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>
+                                    <p>Recall the standard deferred order and place it on hold. </p>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <p>The deferred order is placed on hold. </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>
+                                    <p>Store a standard order. </p>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <p>The deferred order and standard order are stored. </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <br/>
+
+    <table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+        <tr>
+            <td bgcolor="#bbbbbb" width="1%" nowrap align="center">
+                &nbsp;
+                <font color="#ffffff">
+                    <b>Description</b>
+                </font>&nbsp;
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+        <tr>
+            <td id="descriptionArea">
+                <p>In ServicePoint 2017 R4, iPOS Hold functionality is enhanced by allowing Deferred Orders to be put on Hold
+                    and stored in the Store/Recall queue.</p>
+
+                <p>In prior ServicePoint releases, Deferred Orders could not be held and stored in this fashion.</p>
+
+                <p>
+                    <b>Preconditions:</b>
+                    <br/> iPOS and Mobile ordering configured for the Lab in use. No additional configuration is needed.</p>
+                <br/>
+            </td>
+        </tr>
+    </table>
+
+    <hr class='fullcontent'>
+    <br />
+    <br style='page-break-before:always;' />
+    <br />
+</body>
+</html>

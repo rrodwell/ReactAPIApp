@@ -1,0 +1,140 @@
+/* $Id: login_ext.css 1441 2017-10-18 14:59:42Z brad.brown $ */
+/*
+**
+*/
+#loginMain {margin:100px auto 0 auto; width:425px; position:relative}
+
+#loginForm {margin:20px 0 0 0;}
+#loginForm ol {list-style:none; width:100%; overflow:hidden;}
+#loginForm ol li {width:100%; padding:5px 0;}
+#loginForm ol li label{color:#666; display:block; float:left; line-height:20px; text-align:right; padding-right:10px; width:100px;}
+#loginForm ol li .txtBxLogin {width:180px;}
+#loginForm ol li .passBxLogin {width:100px;}
+#loginForm p.btnLogin {float:right; margin:-30px 0 0 0; padding-right:34px; clear:both}
+#loginForm .lnkForgot {clear:both; margin-top:20px; position:relative;}
+#loginForm .lnkForgot .icoToolTip {background:url(../images/icoToolTip.png) no-repeat 7px 2px; width:23px; height:17px; float:right; display:block; text-align:right;}
+#loginForm .lnkForgot .txtForgot {padding-right:5px; text-align:right;display:block;margin-left:150px;}
+.errorMnCont {margin:3px 0;}
+.errorMnCont p{padding:0 8px; margin-top:8px;}
+
+.passML { background:url(../images/loginML.gif) repeat-y left; width:100%;height:245px;float:left padding:5px 12px 10px 12px;}
+.passMR {background:url(../images/loginMR.gif) repeat-y right;height:230px;padding:5px 12px 10px 12px; }
+.btnPass{float:left;margin:2px 50px 0;clear:both;width:370px;}
+a.passbtn {background:url(../images/btnGry.png) no-repeat left top; color:#000; text-decoration:none; float:left; text-align:center; padding-left:5px; font-size:12px;}
+a.passbtn span{background:url(../images/btnGry.png) no-repeat right top; color:#000; float:left; line-height:21px; padding-right:5px; text-decoration:none; cursor:pointer;}
+a.passbtnr {background:url(../images/btnGry.png) no-repeat left top; color:#000; text-decoration:none; float:right; text-align:center; padding-left:5px; font-size:12px;}
+a.passbtnr span{background:url(../images/btnGry.png) no-repeat right top; color:#000; float:left; line-height:21px; padding-right:5px; text-decoration:none; cursor:pointer;}
+#expirationMain {margin:100px auto 0 auto; width:490px; position:relative}
+
+/* Environment-specific Login Logos */
+#loginMain .loginLogo {
+    background:url("/cfa/images/final/portal/logo_w_trim_2.png") no-repeat;
+    width:228px;
+    height:90px;
+    top:24px;
+    _top:28px;
+    left:16px;
+    position:relative;
+}
+#loginMain .loginLogo_prod {
+    background:url("/cfa/images/final/portal/logo_w_trim_prod_2.png") no-repeat;
+    width:228px;
+    height:90px;
+    top:24px;
+    _top:28px;
+    left:16px;
+    position:relative;
+}
+#loginMain .loginLogo_dev {
+    background:url("/cfa/images/final/portal/logo_w_trim_dev_2.png") no-repeat;
+    width:228px;
+    height:90px;
+    top:24px;
+    _top:28px;
+    left:16px;
+    position:relative;
+}
+#loginMain .loginLogo_train {
+    background:url("/cfa/images/final/portal/logo_w_trim_train_2.png") no-repeat;
+    width:228px;
+    height:90px;
+    top:24px;
+    _top:28px;
+    left:16px;
+    position:relative;
+}
+#loginMain .loginLogo_local {
+    background:url("/cfa/images/final/portal/logo_w_trim_local_2.png") no-repeat;
+    width:228px;
+    height:90px;
+    top:24px;
+    _top:28px;
+    left:16px;
+    position:relative;
+}
+#loginMain .loginLogo_test {
+    background:url("/cfa/images/final/portal/logo_w_trim_test_2.png") no-repeat;
+    width:228px;
+    height:90px;
+    top:24px;
+    _top:28px;
+    left:16px;
+    position:relative;
+}
+
+/* Environment-specific Login Logos (Mobile) */
+
+#loginPage .mloginLogo {
+    background:url("/cfa/images/final/portal/logo_plain_2.png") no-repeat;
+    width:228px;
+    height:100px;
+    top:5px;
+    _top:28px;
+    left:42px;
+    position:relative;
+}
+#loginPage .mloginLogo_prod {
+    background:url("/cfa/images/final/portal/logo_plain_prod_2.png") no-repeat;
+    width:228px;
+    height:100px;
+    top:5px;
+    _top:28px;
+    left:42px;
+    position:relative;
+}
+#loginPage .mloginLogo_dev {
+    background:url("/cfa/images/final/portal/logo_plain_dev_2.png") no-repeat;
+    width:228px;
+    height:100px;
+    top:5px;
+    _top:28px;
+    left:42px;
+    position:relative;
+}
+#loginPage .mloginLogo_train {
+    background:url("/cfa/images/final/portal/logo_plain_train_2.png") no-repeat;
+    width:228px;
+    height:100px;
+    top:5px;
+    _top:28px;
+    left:42px;
+    position:relative;
+}
+#loginPage .mloginLogo_local {
+    background:url("/cfa/images/final/portal/logo_plain_local_2.png") no-repeat;
+    width:228px;
+    height:100px;
+    top:5px;
+    _top:28px;
+    left:42px;
+    position:relative;
+}
+#loginPage .mloginLogo_test {
+    background:url("/cfa/images/final/portal/logo_plain_test_2.png") no-repeat;
+    width:228px;
+    height:100px;
+    top:5px;
+    _top:28px;
+    left:42px;
+    position:relative;
+}

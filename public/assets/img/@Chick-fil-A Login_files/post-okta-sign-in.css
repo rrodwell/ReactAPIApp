@@ -1,0 +1,21 @@
+body {
+    background-color: #ffffff;
+}
+
+li {
+	display: list-item;
+	list-style-type: disc;
+}
+
+ul.noindent {
+    margin-left: 5px;
+    margin-right: 0px;
+    padding-left: 10px;
+    padding-right: 0px;
+}
+
+div.spacer {
+	font-size: 0;
+	height: 10px;
+	line-height: 0;
+}

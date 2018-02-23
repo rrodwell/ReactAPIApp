@@ -1,0 +1,155 @@
+/*Custom Fonts*/
+@font-face {
+    font-family: CaeciliaLight;
+    src: url(../fonts/CaeciliaCom-45Light.ttf);
+}
+
+@font-face {
+    font-family: CaeciliaBold;
+    src: url(../fonts/CaeciliaCom-75Bold.ttf);
+}
+
+@font-face {
+    font-family: CaeciliaHeavy;
+    src: url(../fonts/CaeciliaCom-85Heavy.ttf);
+}
+
+@font-face {
+    font-family: Apercu;
+    src: url(../fonts/apercu-regular.otf);
+}
+
+
+/* Main */
+body{
+     color: #5d666f;
+}
+
+.breadcrumb, .breadcrumb:last-child {
+    color: #5d666f;
+}
+
+.breadcrumbs-nav{
+    margin-top: 2%;
+}
+
+div#main-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+#app {
+    min-height: auto;
+}
+
+[class^='container-'] {
+    margin: 0 auto;
+}
+
+.container-body {
+    margin: 25px 60px;
+}
+
+.row {
+    margin-bottom: 0;
+}
+
+.container-93 {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.container-50 {
+    width: 50%;
+    margin: 10% auto;
+}
+
+[type="checkbox"]+label::before,
+[type="checkbox"]:not(.filled-in)+label::after {
+    content: none;
+}
+
+
+.btn:hover,
+.btn-large:hover,
+.btn:after,
+.btn:before {
+    background-color: #009e00;
+}
+
+/*Form titles*/
+
+input:not([type]):focus:not([readonly])+label,
+input[type=text]:not(.browser-default):focus:not([readonly])+label,
+input[type=password]:not(.browser-default):focus:not([readonly])+label,
+input[type=email]:not(.browser-default):focus:not([readonly])+label,
+input[type=url]:not(.browser-default):focus:not([readonly])+label,
+input[type=time]:not(.browser-default):focus:not([readonly])+label,
+input[type=date]:not(.browser-default):focus:not([readonly])+label,
+input[type=datetime]:not(.browser-default):focus:not([readonly])+label,
+input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label,
+input[type=tel]:not(.browser-default):focus:not([readonly])+label,
+input[type=number]:not(.browser-default):focus:not([readonly])+label,
+input[type=search]:not(.browser-default):focus:not([readonly])+label,
+textarea.materialize-textarea:focus:not([readonly])+label {
+    color: darkgrey;
+}
+
+/*Form underline*/
+
+input:not([type]):focus:not([readonly]),
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=url]:not(.browser-default):focus:not([readonly]),
+input[type=time]:not(.browser-default):focus:not([readonly]),
+input[type=date]:not(.browser-default):focus:not([readonly]),
+input[type=datetime]:not(.browser-default):focus:not([readonly]),
+input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
+input[type=tel]:not(.browser-default):focus:not([readonly]),
+input[type=number]:not(.browser-default):focus:not([readonly]),
+input[type=search]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid whitesmoke;
+    box-shadow: 0 1px 0 0 whitesmoke;
+}
+
+ul.dropdown-content li span {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: whitesmoke;
+}
+
+.logo {
+    margin-top: 30px;
+    width: 200px;
+    height: 150px;
+}
+
+/* Card */
+.card .card-content {
+    padding: 15px;
+}
+
+.row .icon-col {
+    padding: 0 5px;
+}
+
+.btn-component h5 {
+    font-family: CaeciliaHeavy;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.btn-component p {
+    font-family: CaeciliaLight;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: italic;
+}
+

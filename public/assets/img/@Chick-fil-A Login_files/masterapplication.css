@@ -1,0 +1,117 @@
+/* $Id: masterapplication.css 614 2009-06-19 22:09:50Z alberto.rama $ */
+/*
+** External login and IDV Base Stylesheet compliant with @CFA 3 look-and-feel
+**
+** This Cascading Stylesheet reflects the needs of a stand-alone application
+** (as opposed to a portlet) that does not run under a CFA banner and is required
+** to comply with a look and feel compatible with @CFA 3.
+**
+*/
+body, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, form, div, span, fieldset, legend, input {margin:0;padding:0;}
+body {background-color:#fff; font: normal 12px Arial, Helvetica, sans-serif; color:#333;}
+a, a:visited {color:#0070C0;}
+fieldset,label {border:0;}
+input{color:#000; padding:0 0 0 3px; margin:0;}
+select{color:#808080;}
+textarea{height:80px;}
+.txtBxLogin {width:180px;} 
+.passBxLogin {width:100px;} 
+li{list-style-type:none;}
+img.ImgBtm{vertical-align:bottom;}
+img.ImgMid{vertical-align:middle;}
+input.ImgBtm{vertical-align:bottom;}
+input.ImgMid{vertical-align:middle;}
+.alignCntr {text-align:center;}
+br{font-size:1px;line-height:1px;height:1px;}
+.clrBoth {clear:both; line-height:0; font-size:0; margin:0; padding:0;}
+.clear { clear:both;}
+.fltRht {float:right;}
+#emailSend { padding-top:5px; text-align:right; font-style:italic; color: #c00000; font-size:11px; font-weight:bold;}
+#textSend { padding-top:5px; text-align:right; font-style:italic; color: #c00000; font-size:11px; font-weight:bold;}
+.fltLft {float:left;}
+.txtSml {font-size:11px;}
+.noBrd { border:0px !important;}
+a.btn {background:url(../images/btnGry.png) no-repeat left top; color:#000; text-decoration:none; float:left; text-align:center; padding-left:20px; font-size:11px;}
+a.btn span{background:url(../images/btnGry.png) no-repeat right top; color:#000; float:left; line-height:21px; padding-right:20px; text-decoration:none; cursor:pointer;}
+.lnkForgotComm {clear:both; margin-top:20px; position:relative; } 
+.lnkForgotComm .icoToolTipComm {background:url(../images/icoToolTip.png) no-repeat 7px 2px; width:23px; height:17px; float:right; display:block; text-align:right;}
+.lnkForgotComm .txtForgotComm {padding-right:5px; text-align:right;display:block;margin-left:150px;}
+
+#errorAlertLogin {margin:10px 0 0 0; background:#E6E6E6; font:bold 16px Arial, Helvetica, sans-serif; position:relative; padding:5px; float:left; border:0 solid #ccc; border-width:2px 4px; width:310px;}
+#errorAlertLogin h4 {background:url(../images/iconError.gif) no-repeat 10px 10px; padding:10px 0 0 40px; min-height:15px; _height:15px; color:#C00000;}
+#errorAlertLogin h4 a {font-weight:normal; font-size:12px; float:right;}
+#errorAlertLogin .txterrorMoreInfo {float:right; clear:both; font-size:12px; font-weight:normal;}
+
+#errorNotAvail {margin:10px 0 0 0; background:#E6E6E6; font:bold 16px Arial, Helvetica, sans-serif; position:relative; padding:5px; float:left; border:0 solid #ccc; border-width:2px 4px; width:310px;}
+#errorNotAvail h4 {background:url(../images/icoPassNotAvail.gif) no-repeat 10px 5px;  padding:10px 0 0 45px; min-height:30px; _height:30px;  color:#C00000;}
+#errorNotAvail h4 a {font-weight:normal; font-size:12px; float:right;}
+#errorNotAvail .txtMoreInfo {float:right; clear:both; font-size:12px; font-weight:normal;}
+#errorNotAvail p {font-size:12px; font-weight:normal; padding:5px;}
+#errorAlertLst {border:5px solid #ccc; margin:10px 0 0 0; clear:both; width:auto}
+#errorAlertLst .errorLstTL {background:url(../images/errorCurTL.gif) no-repeat left top; width:5px; height:5px; float:left; margin:-5px 0 0 -5px; font-size:1px;}
+#errorAlertLst .errorLstTR {background:url(../images/errorCurTR.gif) no-repeat right top; width:5px; height:5px; margin:-5px -5px 0 0; float:right;font-size:1px;}
+#errorAlertLst .errorLstM {background:#E6E6E6;}
+#errorAlertLst .errorLstBL {background:url(../images/errorCurBL.gif) no-repeat left bottom; width:5px; height:5px; float:left; margin:0 0 0 -5px;font-size:1px;}
+#errorAlertLst .errorLstBR {background:url(../images/errorCurBR.gif) no-repeat right bottom; width:5px; height:5px; margin:0 -5px 0 0; float:right;font-size:1px;}
+#errorAlertLst ul#errorLst {margin:0 8px; padding:10px 0;}
+#errorAlertLst ul#errorLst li {background:url(../images/bulletError.gif) no-repeat 0 10px; padding:4px 10px;}
+
+#errorAlertLst ul#stepsPass {margin:0 8px; padding:10px 0; text-align:center; font-size:13px; /*updated on 17-Jun-09*/*width:97%;}
+#errorAlertLst ul#stepsPass li {display:inline; margin-right:20px;}
+#errorAlertLst ul#stepsPass li span {color:#BFBEBE;}
+
+#errorAlertLst .lnkInfo {text-align:right; padding:0 8px 3px ;}
+#errorAlertLst .txtError {background:url(../images/iconError.gif) no-repeat 8px 5px; color:#C00000; font-size:16px; font-weight:bold; padding:5px 0 10px 35px;}
+#errorAlertLst .txtIconError {background:url(../images/icoPassNotAvail.gif) no-repeat 8px 5px; color:#C00000; font-size:16px; font-weight:bold; padding:5px 0 10px 35px;}
+#errorAlertLst p {padding:0 10px;}
+
+.loginT {background:url(../images/loginT.gif) repeat-x bottom; height:11px; float:left; width:100%;}
+.loginT .loginR {background:url(../images/loginRT.gif) no-repeat bottom; float:right; height:11px; width:11px;}
+.loginT .loginL{background:url(../images/loginLT.gif) no-repeat bottom; float:left; height:11px; width:11px;}
+
+.loginML {background:url(../images/loginML.gif) repeat-y left; width:100%; float:left}
+.loginML .loginMR {background:url(../images/loginMR.gif) repeat-y right; padding:15px 12px 10px 12px; /* *width:676px; Edited on 17-Jun-09*/}
+ 
+.loginB {background:url(../images/loginB.gif) repeat-x top; height:11px; float:left; width:100%;}
+.loginB .loginRB {background:url(../images/loginRB.gif) no-repeat top; float:right; width:11px; height:11px;}
+.loginB .loginLB{background:url(../images/loginLB.gif) no-repeat top; float:left; width:11px; height:11px;}
+
+#tooltip {width:188px; text-align:left; left:50%; margin-left:140px; top:-105px;  position:absolute; z-index:1; }
+#tooltip .tooltopT {background:url(../images/tooltipT.gif) no-repeat bottom; width:188px; height:11px;}
+#tooltip .tooltopM {background:url(../images/tooltipM.gif) repeat-y; padding:5px 10px;}
+#tooltip .tooltopB {background:url(../images/tooltipB.gif) no-repeat; width:189px; height:34px;}
+
+#tooltip1 {width:188px; text-align:left; left:94%; /*margin-left:150px; Edited on 17-Jun-09*/ top:-135px; position:absolute; z-index:1; }
+#tooltip1 .tooltopT1 {background:url(../images/tooltipT.gif) no-repeat bottom; width:188px; height:11px;}
+#tooltip1 .tooltopM1 {background:url(../images/tooltipM.gif) repeat-y; padding:5px 10px;}
+#tooltip1 .tooltopB1 {background:url(../images/tooltipB.gif) no-repeat; width:189px; height:34px;}
+
+#tooltip2 {width:188px; text-align:left; left:50%; margin-left:73px; top:-95px; position:absolute; z-index:1; }
+#tooltip2 .tooltopT2 {background:url(../images/tooltipT.gif) no-repeat bottom; width:188px; height:11px;}
+#tooltip2 .tooltopM2 {background:url(../images/tooltipM.gif) repeat-y; padding:5px 10px;}
+#tooltip2 .tooltopB2 {background:url(../images/tooltipB.gif) no-repeat; width:189px; height:34px;}
+
+#tooltip3 {width:188px; text-align:left; left:50%; margin-left:73px; top:-95px; position:absolute; z-index:1;}
+#tooltip3 .tooltopT3 {background:url(../images/tooltipT.gif) no-repeat bottom; width:188px; height:11px;}
+#tooltip3 .tooltopM3 {background:url(../images/tooltipM.gif) repeat-y; padding:5px 10px;}
+#tooltip3 .tooltopB3 {background:url(../images/tooltipB.gif) no-repeat; width:189px; height:34px;}
+
+.innerContComm { clear:both; margin:10px 0;}
+.innerContComm p{padding:5px;}
+
+.gryCurBxMn {float:left; width:100%; background:#ccc;}
+.gryBxT {float:left; width:100%; font-size:0px;}
+.gryBxT .gryBxR {background:url(../images/gryBxCurTR.gif) no-repeat top right; float:right; height:9px; width:9px;}
+.gryBxT .gryBxLT {background:url(../images/gryBxCurTL.gif) no-repeat top left; float:left; height:9px; width:9px;}
+.gryBxCont {padding:0 13px 0 13px;}
+.gryBxB {float:left; width:100%; font-size:0px;}
+.gryBxB .gryBxRB {background:url(../images/gryBxCurBR.gif) no-repeat bottom right; float:right; width:9px; height:9px;}
+.gryBxB .gryBxLB{background:url(../images/gryBxCurBL.gif) no-repeat bottom left; float:left; width:9px; height:9px;}
+
+.DvFtr {text-align:center; margin:0; padding:5px 0; font-size:11px; clear:both;}
+
+.positionRel { position:relative;}
+
+/*Added on 17-Jun-09 START*/
+.w100p {width:100%;}
+/*Added on 17-Jun-09 END*/
