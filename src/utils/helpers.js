@@ -41,11 +41,11 @@ const helpers = {
                 console.log("Success:", JSON.stringify(loginResponse));
             });
 
-        console.log("Token",token);
-        console.log("URL", url);
-        console.log("Data", data);
-        console.log("Header", header);
-        console.log("Obj", obj);
+        // console.log("Token",token);
+        // console.log("URL", url);
+        // console.log("Data", data);
+        // console.log("Header", header);
+        console.log("New Obj", obj);
     },
 
     // axiosAuthenticateUser: function (credentials) {
