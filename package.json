@@ -16,10 +16,10 @@
     "axios": "^0.17.1",
     "base-64": "^0.1.0",
     "body-parser": "^1.18.2",
-    "cheerio": "^1.0.0-rc.2",
     "es6-promise": "^4.2.2",
     "express": "^4.16.2",
     "isomorphic-fetch": "^2.2.1",
+    "jquery": "^3.3.1",
     "morgan": "^1.9.0",
     "path": "^0.12.7",
     "qs": "^6.5.1",
@@ -30,9 +30,7 @@
     "react-router-dom": "^4.2.2",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
-    "webpack": "^3.10.0",
-    "xml-stream": "^0.4.5",
-    "xml2js": "^0.4.19"
+    "webpack": "^3.10.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

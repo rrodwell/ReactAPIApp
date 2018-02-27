@@ -5,8 +5,7 @@ import { Row, Col, Card, ProgressBar, Input, Button } from "react-materialize";
 import helpers from "../../utils/helpers";
 
 //Packages
-import base64 from 'base-64';
-import qs from 'qs';
+import $ from "jquery";
 
 class UploadDefects extends Component {
     constructor() {
@@ -18,8 +17,9 @@ class UploadDefects extends Component {
         // console.log(sessionStorage.getItem("token"));
     }
 
-    readCSV() {
-
+    readDefectCSV() {
+        let filePath = $('#filePath').val();
+        console.log(filePath)
     }
 
     render() {
@@ -33,9 +33,9 @@ class UploadDefects extends Component {
                 <Card className="card-component">
                     <h5>Upload File</h5>
                     <Row>
-                        <Input s={6} type="file"/>
+                        <Input s={6} type="file" id="filePath"/>
                     </Row>
-                    <Button className="red darken-1" node="a" onClick={this.readCSV}>Upload</Button>
+                    <Button className="red darken-1" node="a" onClick={this.readDefectCSV}>Upload</Button>
                 </Card>
             </div>
         )
