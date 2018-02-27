@@ -23,6 +23,8 @@ const helpers = {
         const header = {
             "Authorization": "Basic " + base64.encode(credentials.email + ":"),
             "Content-Type": "application/x-www-form-urlencoded",
+            // "Access-Control-Allow-Origin" :
+
         }
 
         const obj = {
