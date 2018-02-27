@@ -5,8 +5,8 @@ import { Row, Col, Card, ProgressBar, Input, Button } from "react-materialize";
 import helpers from "../../utils/helpers";
 
 //Packages
-import Papa from "papaparse";
 import $ from "jquery";
+import Papa from "papaparse";
 
 class UploadDefects extends Component {
     constructor() {
@@ -19,36 +19,42 @@ class UploadDefects extends Component {
     }
 
     readDefectCSV() {
-        let filePath = $('#filePath').val();
-        console.log(filePath)
+        const parseFile = $("#filePath")[0].files[0]
+        const files = $('#filePath')[0].files;
+        // console.log($('#filePath')[0].files);
+        // console.log(parseFile);
+        // helpers.parseFile(files);
 
+        let options = {
+            'header': true,
+            complete: function(){
+                var rows = arguments[0].data.length;
+                console.log("Results: ", arguments[0].data);
+                console.log("Rows:", rows);
+            },
+            error: function(error,file){
+                console.log("ERROR:",error, file)
+            }
+        };
 
-		var files = $('#filePath')[0].files;
-
-		if (files.length > 0)
+        if (files.length > 0)
 		{
 
-			Papa.parse(filePath,{
-				config: {
-                    header: true,
-                    complete: helpers.completeFn,
-		            error: helpers.errorFn,
-                },
-				before: function(file, inputElem)
-				{
-					console.log("Parsing file:", file);
-				},
-				complete: function()
-				{
-					console.log("Done with all files.");
-				}
-			});
+            Papa.parse(parseFile,options);
 		}
 		else
 		{
 			console.log("Upload a file that has stuff in it!");
 		}
 
+    }
+
+    createDefects(defectsArr){
+        allDefects =[];
+
+        for(var i =1; i > defectsArr.length-1; i++){
+
+        }
     }
 
     render() {
@@ -62,7 +68,7 @@ class UploadDefects extends Component {
                 <Card className="card-component">
                     <h5>Upload File</h5>
                     <Row>
-                        <Input s={6} type="file" id="filePath"/>
+                        <input type="file" id="filePath"/>
                     </Row>
                     <Button className="red darken-1" node="a" onClick={this.readDefectCSV}>Upload</Button>
                 </Card>
