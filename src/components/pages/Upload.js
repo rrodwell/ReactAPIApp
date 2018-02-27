@@ -5,6 +5,7 @@ import { Row, Col, Card, ProgressBar, Input, Button } from "react-materialize";
 import helpers from "../../utils/helpers";
 
 //Packages
+import Papa from "papaparse";
 import $ from "jquery";
 
 class UploadDefects extends Component {
@@ -20,6 +21,34 @@ class UploadDefects extends Component {
     readDefectCSV() {
         let filePath = $('#filePath').val();
         console.log(filePath)
+
+
+		var files = $('#filePath')[0].files;
+
+		if (files.length > 0)
+		{
+
+			Papa.parse(filePath,{
+				config: {
+                    header: true,
+                    complete: helpers.completeFn,
+		            error: helpers.errorFn,
+                },
+				before: function(file, inputElem)
+				{
+					console.log("Parsing file:", file);
+				},
+				complete: function()
+				{
+					console.log("Done with all files.");
+				}
+			});
+		}
+		else
+		{
+			console.log("Upload a file that has stuff in it!");
+		}
+
     }
 
     render() {

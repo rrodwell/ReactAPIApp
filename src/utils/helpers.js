@@ -55,43 +55,19 @@ const helpers = {
         // console.log("New Obj", obj);
     },
 
-    // axiosAuthenticateUser: function (credentials) {
-    //     return axios.post("/auth/login", credentials).then(function (status) {
-    //         if (status.data.success) {
-    //             if (status.data.auth_lvl === "employee" && status.data.isNew === true) {
-    //                 return "/employee/update/password";
-    //             } else if (status.data.auth_lvl === "employee" && status.data.isNew === false) {
-    //                 return "/employee/welcome";
-    //             } else {
-    //                 return "/admin";
-    //             }
-    //         } else {
-    //             console.log(status.data.message);
-    //         }
-    //     });
-    // },
+    errorFn: function(error, file) {
 
-    // getEmployeeData: function () {
-    //     return axios.get("/employee/data").then(function (data) {
-    //         return data;
-    //     });
-    // },
+        console.log("ERROR:", error, file);
+    },
 
-    // postEmployeeData: function (data) {
-    //     return axios.post("/employee/data", data).then(function (status) {
-    //         if (status.data.success) {
-    //             return "Update success.";
-    //         }
-    //     });
-    // },
+    completeFn: function() {
 
-    // logout: function () {
-    //     return axios.get("/auth/logout").then(function (status) {
-    //         if (status.data.success) {
-    //             return "/";
-    //         }
-    //     });
-    // }
+        rows = arguments[0].data.length;
+
+        console.log("Results: ", arguments[0].data);
+        console.log("Rows:", rows);
+    },
+
 };
 
 module.exports = helpers;

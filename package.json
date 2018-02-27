@@ -1,5 +1,5 @@
 {
-  "name": "qtest",
+  "name": "react-api-app",
   "version": "1.0.0",
   "description": "CLI to make API calls to qTest to post, get, and update Test Cases",
   "main": "server.js",
@@ -21,6 +21,7 @@
     "isomorphic-fetch": "^2.2.1",
     "jquery": "^3.3.1",
     "morgan": "^1.9.0",
+    "papaparse": "^4.3.7",
     "path": "^0.12.7",
     "qs": "^6.5.1",
     "react": "^16.2.0",
@@ -42,5 +43,13 @@
     "eslint-plugin-react": "^7.5.1",
     "npm-run-all": "^4.1.1",
     "webpack": "^3.8.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rrodwell/ReactAPIApp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rrodwell/ReactAPIApp/issues"
+  },
+  "homepage": "https://github.com/rrodwell/ReactAPIApp#readme"
 }
