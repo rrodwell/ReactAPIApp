@@ -1,4 +1,4 @@
-import NavbarComponent from './Navbar';
+import NavbarComponent from './Navbar3';
 import Banner from './Banner';
 import TextLeftImgRight from './TextLeftImgRight';
 import TextRightImgLeft from './TextRightImgLeft';

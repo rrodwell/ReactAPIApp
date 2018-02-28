@@ -19,11 +19,6 @@ class Home extends Component {
 
             <Col s={12} className="">
               <Row>
-                <div className="col s12 breadcrumbs-nav">
-                  <a href="#!" className="breadcrumb">First</a>
-                  <a href="#!" className="breadcrumb">Second</a>
-                  <a href="#!" className="breadcrumb">Third</a>
-                </div>
                 <Col>
                   <h2 style={{
                     fontFamily: "Apercu",

@@ -52,66 +52,14 @@ const helpers = {
         // console.log("New Obj", obj);
     },
 
-    parseFile: function(files){
+    createDefects: function(defectsArr) {
+        console.log("received");
+        var allDefects =[];
 
-		if (files.length > 0)
-		{
-
-			Papa.parse(filePath,{
-				config: {
-                    header: true,
-                    complete: helpers.completeFn,
-		            error: helpers.errorFn,
-                },
-				before: function(file, inputElem)
-				{
-					console.log("Parsing file:", file);
-				},
-				complete: function()
-				{
-					console.log("Done with all files.");
-				}
-			});
-		}
-		else
-		{
-			console.log("Upload a file that has stuff in it!");
-		}
-    },
-
-    buildConfig: function(){
-        return {
-            // delimiter: $('#delimiter').val(),
-            // newline: getLineEnding(),
-            header: true,
-            // dynamicTyping: $('#dynamicTyping').prop('checked'),
-            // preview: parseInt($('#preview').val() || 0),
-            // step: $('#stream').prop('checked') ? stepFn : undefined,
-            // encoding: $('#encoding').val(),
-            // worker: $('#worker').prop('checked'),
-            // comments: $('#comments').val(),
-            complete: helpers.completeFn(),
-            error: helpers.errorFn(),
-            // download: $('#download').prop('checked'),
-            // fastMode: $('#fastmode').prop('checked'),
-            // skipEmptyLines: $('#skipEmptyLines').prop('checked'),
-            // chunk: $('#chunk').prop('checked') ? chunkFn : undefined,
-            // beforeFirstChunk: undefined,
-        };
-
-    },
-    errorFn: function(error, file) {
-
-        console.log("ERROR:", error, file);
-    },
-
-    completeFn: function() {
-
-        rows = arguments[0].data.length;
-
-        console.log("Results: ", arguments[0].data);
-        console.log("Rows:", rows);
-    },
+        for(var i =0; i > defectsArr.length-1; i++){
+            console.log(defectsArr[i]);
+        }
+    }
 
 };
 

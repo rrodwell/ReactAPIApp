@@ -28,9 +28,11 @@ class UploadDefects extends Component {
         let options = {
             'header': true,
             complete: function(){
-                var rows = arguments[0].data.length;
-                console.log("Results: ", arguments[0].data);
-                console.log("Rows:", rows);
+                // var rows = arguments[0].data.length;
+                var results = arguments[0].data;
+                // console.log("Rows:", rows);
+                helpers.createDefects(results);
+                console.log("sent");
             },
             error: function(error,file){
                 console.log("ERROR:",error, file)
@@ -49,13 +51,6 @@ class UploadDefects extends Component {
 
     }
 
-    createDefects(defectsArr){
-        allDefects =[];
-
-        for(var i =1; i > defectsArr.length-1; i++){
-
-        }
-    }
 
     render() {
         return (

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, NavItem, SideNav, SideNavItem, Button, Dropdown } from 'react-materialize';
+import { Card, Row, Col, CardPanel } from 'react-materialize';
 
 class NavbarComponent extends Component {
     constructor() {
@@ -13,9 +13,9 @@ class NavbarComponent extends Component {
 
     render() {
         return (
-            <Navbar brand={
-                <img href="/" src="./assets/img/CFA_CSymbols/CircleCSymbol/Red/CFA_CSymbol_Circle_Red_RGB.png" />
-            } />
+            <CardPanel className="card-nav">
+                <img href="/" src="./assets/img/CFA_ScriptLogo/Red/CFA_ScriptLogo_Red_RGB.png" />
+            </CardPanel>
         )
     }
 };
