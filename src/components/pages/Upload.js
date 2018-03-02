@@ -31,8 +31,10 @@ class UploadDefects extends Component {
                 // var rows = arguments[0].data.length;
                 var results = arguments[0].data;
                 // console.log("Rows:", rows);
+                // console.log("Results:",results);
+                // console.log("sent");
                 helpers.createDefects(results);
-                console.log("sent");
+                
             },
             error: function(error,file){
                 console.log("ERROR:",error, file)
