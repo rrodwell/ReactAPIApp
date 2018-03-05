@@ -92,14 +92,18 @@ const helpers = {
             }
 
             //Set qTest Status 
-            if (status == "Open") {
-                qStatus = 10001;
-            } else if (status == "Closed") {
+            // if (status == "Open") {
+            //     qStatus = 10001;
+            // } else 
+            
+            if (status == "Closed") {
                 qStatus = 10005;
             } else if (status == "Watch") {
                 qStatus = 1108485;
             } else if (status == "Rejected") {
                 qStatus = 10004;
+            } else {
+                qStatus = 10001;
             }
 
             var defectProps = [
@@ -157,12 +161,13 @@ const helpers = {
 
             // console.log("Data:", data);
 
-            fetch(url, obj).then(res => res.json())
-                .catch(error => console.error("Error:", error))
-                .then(response => {
-                    console.log(response);
-                });
-            // console.log(JSON.stringify(obj.body));
+            // fetch(url, obj).then(res => res.json())
+            //     .catch(error => console.error("Error:", error))
+            //     .then(response => {
+            //         console.log(response);
+            //         console.log(obj.body.qTitle);
+            //     });
+            console.log(JSON.stringify(obj.body));
         }
 
     }
