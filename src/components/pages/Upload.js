@@ -11,48 +11,38 @@ import Papa from "papaparse";
 class UploadDefects extends Component {
     constructor() {
         super();
+        this.state = {
+            token: "",
+            uri: ""
+        }
     }
 
     componentDidMount() {
         window.scrollTo(0, 0);
-        // console.log(sessionStorage.getItem("token"));
     }
 
     readDefectCSV() {
         const parseFile = $("#filePath")[0].files[0]
         const files = $('#filePath')[0].files;
-        // console.log($('#filePath')[0].files);
-        // console.log(parseFile);
-        // helpers.parseFile(files);
-
+    
         let options = {
             'header': true,
             complete: function(){
-                // var rows = arguments[0].data.length;
                 var results = arguments[0].data;
-                // console.log("Rows:", rows);
-                // console.log("Results:",results);
-                // console.log("sent");
                 helpers.createDefects(results);
-                
             },
             error: function(error,file){
                 console.log("ERROR:",error, file)
             }
         };
 
-        if (files.length > 0)
-		{
-
+        if (files.length > 0){
             Papa.parse(parseFile,options);
-		}
-		else
-		{
-			console.log("Upload a file that has stuff in it!");
+		} else {
+			console.log("This file is empty.");
 		}
 
     }
-
 
     render() {
         return (
