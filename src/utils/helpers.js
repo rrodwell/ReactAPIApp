@@ -8,7 +8,7 @@ const helpers = {
 
 
     authenticateUser: function(credentials) {
-        // console.log("clicked")
+
         sessionStorage.setItem("uri", credentials.uri);
 
         const url = credentials.uri + "oauth/token";
@@ -27,7 +27,7 @@ const helpers = {
         }
 
         const obj = {
-            method: "POST", // or "PUT"
+            method: "POST",
             headers: header,
             body: data
         }
@@ -40,28 +40,20 @@ const helpers = {
             .then(loginResponse => {
                 if (loginResponse.access_token != null){
                     token = loginResponse.access_token;
-                    // console.log("Success:", loginResponse);
                     console.log("Token", token);
                     sessionStorage.setItem("token",token);
                 } else {
-                    alert("Incorrect Credential!")
+                    alert("Incorrect Credentials!")
                 }
             });
-
-        // console.log("URL", url);
-        // console.log("Data", data);
-        // console.log("Header", header);
-        // console.log("New Obj", obj);
     },
 
     createDefects: function(defectsArr) {
-        // console.log("received");
-        // console.log("DefectsArr:",defectsArr);
-        
+
         var allDefects =[];
 
         for(var i =0; i < defectsArr.length-1; i++){
-            // console.log(defectsArr[i]);
+
             var key = defectsArr[i].Key;
             var summary = defectsArr[i].Summary;
             var description = defectsArr[i].Description;
@@ -128,14 +120,13 @@ const helpers = {
 
             allDefects.push(defectProps);
         }
-        // console.log(JSON.stringify(allDefects));
+
         helpers.submitDefect(allDefects);
     },
 
     submitDefect: function(defectList){
         console.log("submitting...");
-        // console.log(JSON.stringify(defectList));
-        // console.log(sessionStorage.getItem("uri"));
+        
         var sessionURI = sessionStorage.getItem("uri");
         var projectID = "45705";
         var url = sessionURI + "api/v3/projects/"+projectID+"/defects";
