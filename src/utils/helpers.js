@@ -60,7 +60,7 @@ const helpers = {
         
         var allDefects =[];
 
-        for(var i =0; i < defectsArr.length; i++){
+        for(var i =0; i < defectsArr.length-1; i++){
             // console.log(defectsArr[i]);
             var key = defectsArr[i].Key;
             var summary = defectsArr[i].Summary;
@@ -80,26 +80,26 @@ const helpers = {
 
             //Set qTest Severity 
             if (priority == "1.Critical"){
-                qSeverity = "Fatal";
+                qSeverity = 10305;
             } else if (priority == "2.High"){
-                qSeverity = "Major";
+                qSeverity = 10304;
             } else if (priority == "3.Medium"){
-                qSeverity = "Average";
+                qSeverity = 10303;
             } else if (priority == "4.Low") {
-                qSeverity = "Minor";
+                qSeverity = 10302;
             } else {
-                qSeverity = "Cosmetic";
+                qSeverity = 10301;
             }
 
             //Set qTest Status 
             if (status == "Open") {
-                qStatus = "New";
+                qStatus = 10001;
             } else if (status == "Closed") {
-                qStatus = "Closed";
+                qStatus = 10005;
             } else if (status == "Watch") {
-                qStatus = "Deferred";
+                qStatus = 1108485;
             } else if (status == "Rejected") {
-                qStatus = "Reopened";
+                qStatus = 10004;
             }
 
             var defectProps = [
@@ -152,16 +152,17 @@ const helpers = {
             const obj = {
                 method: "POST", // or "PUT"
                 headers: header,
-                body: data
+                body: JSON.stringify(data),
             }
 
+            // console.log("Data:", data);
 
-            // fetch(url, obj).then(res => res.json())
-            //     .catch(error => console.error("Error:", error))
-            //     .then(response => {
-            //         console.log(response);
-            //     });
-            console.log(JSON.stringify(obj.body));
+            fetch(url, obj).then(res => res.json())
+                .catch(error => console.error("Error:", error))
+                .then(response => {
+                    console.log(response);
+                });
+            // console.log(JSON.stringify(obj.body));
         }
 
     }
