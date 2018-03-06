@@ -2,7 +2,6 @@
 import fetch from "isomorphic-fetch";
 import base64 from 'base-64';
 import qs from 'qs';
-import Papa from "papaparse";
 
 const helpers = {
 

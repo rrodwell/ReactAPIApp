@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { CenterDiv, NavbarComponent, CardComponent, SquareButton } from '../common';
+import { CenterDiv, NavbarComponent, CardComponent, SquareButton } from '../subcomponents';
 import { Row, Col, Breadcrumb, MenuItem } from "react-materialize";
 
 class Home extends Component {

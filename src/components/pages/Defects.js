@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col, Card, ProgressBar, Input, Button } from "react-materialize";
 
-import { APILoginForm, DefectUploadForm } from '../common';
+import { APILoginForm, DefectUploadForm } from '../subcomponents';
 
 //Helpers
 import helpers from "../../utils/helpers";

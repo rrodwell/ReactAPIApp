@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavbarComponent, } from './common';
+import { NavbarComponent, } from './subcomponents';
 
 const Main = props => (
   <div id='main-section'>
