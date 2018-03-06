@@ -1,23 +1,18 @@
-import NavbarComponent from './Navbar3';
-import Banner from './Banner';
-import TextLeftImgRight from './TextLeftImgRight';
-import TextRightImgLeft from './TextRightImgLeft';
-import RoundButton from './RoundButton';
-import SquareButton from './SquareButton';
-import RowLayout from './RowLayout';
+import NavbarComponent from './Navbar';
 import ColLayout from './ColLayout';
 import CenterDiv from './CenterDiv';
 import CardComponent from './CardComponent';
+import APILoginForm from './APILoginForm';
+import DefectUploadForm from './DefectUploadForm';
+import SquareButton from './SquareButton';
+// import JiraTestCaseUploadForm 
 
 module.exports = {
   NavbarComponent,
-  Banner,
-  TextLeftImgRight,
-  TextRightImgLeft,
-  RoundButton,
-  SquareButton,
-  RowLayout,
+  APILoginForm,
+  DefectUploadForm,
   ColLayout,
   CenterDiv,
-  CardComponent
+  CardComponent,
+  SquareButton,
 };

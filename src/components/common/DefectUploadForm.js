@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Card, ProgressBar, Input, Button } from "react-materialize";
+import { Row, Col, Card, Input, Button } from "react-materialize";
 
 //Helpers
 import helpers from "../../utils/helpers";
@@ -8,17 +8,9 @@ import helpers from "../../utils/helpers";
 import $ from "jquery";
 import Papa from "papaparse";
 
-class UploadDefects extends Component {
+class DefectUploadForm extends Component {
     constructor() {
         super();
-        this.state = {
-            token: "",
-            uri: ""
-        }
-    }
-
-    componentDidMount() {
-        window.scrollTo(0, 0);
     }
 
     readDefectCSV() {
@@ -46,22 +38,15 @@ class UploadDefects extends Component {
 
     render() {
         return (
-            <div className="container-50">
+            <Card className="card-component">
+                <h5>Upload File</h5>
                 <Row>
-                    <Col s={12}>
-                        <ProgressBar progress={50} className="red" />
-                    </Col>
+                    <input type="file" id="filePath"/>
                 </Row>
-                <Card className="card-component">
-                    <h5>Upload File</h5>
-                    <Row>
-                        <input type="file" id="filePath"/>
-                    </Row>
-                    <Button className="red darken-1" node="a" onClick={this.readDefectCSV}>Upload</Button>
-                </Card>
-            </div>
+                <Button className="red darken-1" node="a" onClick={this.readDefectCSV}>Upload</Button>
+            </Card>
         )
     }
 };
 
-export default UploadDefects;
+export default DefectUploadForm;

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Row, Col, Card, ProgressBar, Input, Button } from "react-materialize";
 
+import { APILoginForm, DefectUploadForm } from '../common';
+
 //Helpers
 import helpers from "../../utils/helpers";
 
@@ -12,22 +14,16 @@ import qs from 'qs';
 class Defects extends Component {
     constructor() {
         super();
+        this.state = {
+            token: "",
+            uri: ""
+        }
     }
 
     componentDidMount() {
         window.scrollTo(0, 0);
     }
 
-    loginAPI () {
-        var employeeCredentials = {
-            uri: "https://chickfila.qtestnet.com/",
-            email: document.getElementById("email").value.trim(),
-            password: document.getElementById("password").value.trim()
-        };
-
-        helpers.authenticateUser(employeeCredentials);
-
-    }
 
     render() {
         return (
@@ -37,14 +33,8 @@ class Defects extends Component {
                         <ProgressBar progress={50} className="red" />
                     </Col>
                 </Row>
-                <Card className="card-component">
-                    <h5>Upload Defects</h5>
-                    <Row>
-                        <Input s={8} type="email" label="Username" id="email" />
-                        <Input s={8} type="password" label="Password" id="password" />
-                    </Row>
-                    <Button className="red darken-1" node="a" onClick={this.loginAPI}>Test</Button>
-                </Card>
+                <APILoginForm />
+                <DefectUploadForm />
             </div>
         )
     }

@@ -154,13 +154,13 @@ const helpers = {
 
             // console.log("Data:", data);
 
-            fetch(url, obj).then(res => res.json())
-                .catch(error => console.error("Error:", error))
-                .then(response => {
-                    console.log(response);
-                    // console.log(obj.body.qTitle);
-                });
-            // console.log(JSON.stringify(obj.body));
+            // fetch(url, obj).then(res => res.json())
+            //     .catch(error => console.error("Error:", error))
+            //     .then(response => {
+            //         console.log(response);
+            //         // console.log(obj.body.qTitle);
+            //     });
+            console.log(JSON.stringify(obj.body));
         }
 
     }
