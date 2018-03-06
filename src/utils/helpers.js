@@ -62,11 +62,12 @@ const helpers = {
             var priority = defectsArr[i].Priority;
             var created = defectsArr[i].Created;
             var creator = defectsArr[i].Creator;
+            var version = defectsArr[i].AffectedVersion;
 
             var newLine = "\n";
 
             var qTitle = key.concat(": ", summary);
-            var qDescription = description.concat(newLine,newLine,"Labels: ", label, newLine, "Creator: ", creator, newLine, "Created At: ", created);
+            var qDescription = description.concat(newLine,newLine,"Version: ",version, newLine,"Labels: ", label, newLine, "Creator: ", creator, newLine, "Created At: ", created);
             var qStatus = "";
             var qSeverity = "";
 
@@ -122,6 +123,7 @@ const helpers = {
         }
 
         helpers.submitDefect(allDefects);
+        // console.log(defectProps);
     },
 
     submitDefect: function(defectList){
@@ -152,13 +154,13 @@ const helpers = {
 
             // console.log("Data:", data);
 
-            // fetch(url, obj).then(res => res.json())
-            //     .catch(error => console.error("Error:", error))
-            //     .then(response => {
-            //         console.log(response);
-            //         console.log(obj.body.qTitle);
-            //     });
-            console.log(JSON.stringify(obj.body));
+            fetch(url, obj).then(res => res.json())
+                .catch(error => console.error("Error:", error))
+                .then(response => {
+                    console.log(response);
+                    // console.log(obj.body.qTitle);
+                });
+            // console.log(JSON.stringify(obj.body));
         }
 
     }
