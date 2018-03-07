@@ -8,24 +8,28 @@ class Home extends Component {
     this.state = {
       buttons: [
         {
+          uKey: 0,
           header: "Test Cases",
           description: "Import Test Cases",
           icon: "file_upload",
           url: "/test-cases",
         },
         {
+          uKey: 1,
           header: "Defects",
           description: "Import Defects",
           icon: "bug_report",
           url: "/defects",
         },
         {
+          uKey: 2,
           header: "Other Call",
           description: "Make another call",
           icon: "import_export",
           url: "",
         },
         {
+          uKey: 3,
           header: "Other Call",
           description: "Make another call",
           icon: "import_export",
@@ -59,7 +63,7 @@ class Home extends Component {
               </Row>
               <Row>
                 {
-                  this.state.buttons.map(button => <SquareButton icon={button.icon} cardHeader={button.header} cardDescription={button.description} url={button.url} />)
+                  this.state.buttons.map(button => <SquareButton key={button.uKey} icon={button.icon} cardHeader={button.header} cardDescription={button.description} url={button.url} />)
                 }
               </Row>
             </Col>
