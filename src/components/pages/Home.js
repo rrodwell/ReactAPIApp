@@ -5,7 +5,34 @@ import { Row, Col, Breadcrumb, MenuItem } from "react-materialize";
 class Home extends Component {
   constructor() {
     super();
-
+    this.state = {
+      buttons: [
+        {
+          header: "Test Cases",
+          description: "Import Test Cases",
+          icon: "file_upload",
+          url: "/test-cases",
+        },
+        {
+          header: "Defects",
+          description: "Import Defects",
+          icon: "bug_report",
+          url: "/defects",
+        },
+        {
+          header: "Other Call",
+          description: "Make another call",
+          icon: "import_export",
+          url: "",
+        },
+        {
+          header: "Other Call",
+          description: "Make another call",
+          icon: "import_export",
+          url: "",
+        },
+      ]
+    }
   }
 
   componentDidMount() {
@@ -31,19 +58,9 @@ class Home extends Component {
                 </Col>
               </Row>
               <Row>
-                <Col s={3}>
-                  <SquareButton icon={"file_upload"} cardHeader={"TEST CASES"} cardDescription={"Import Test Cases"} url={"/test-cases"}/>
-                </Col>
-                <Col s={3}>
-                  <SquareButton icon={"bug_report"} cardHeader={"DEFECTS"} cardDescription={"Import Defects"} url={"/defects"} />
-                </Col>
-                <Col s={3}>
-                  <SquareButton icon={"import_export"} cardHeader={"OTHER CALL"} cardDescription={"Make another call"} />
-                </Col>
-                <Col s={3}>
-                  <SquareButton icon={"import_export"} cardHeader={"OTHER CALL"} cardDescription={"Make another call"} />
-                </Col>
-
+                {
+                  this.state.buttons.map(button => <SquareButton icon={button.icon} cardHeader={button.header} cardDescription={button.description} url={button.url} />)
+                }
               </Row>
             </Col>
           </Row>
