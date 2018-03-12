@@ -15,8 +15,9 @@ class Defects extends Component {
     constructor() {
         super();
         this.state = {
-            token: "",
-            uri: ""
+            token: "token1",
+            uri: "https://chickfila.qtestnet.com/",
+            projectID: "",
         }
     }
 
@@ -33,7 +34,7 @@ class Defects extends Component {
                         <ProgressBar progress={50} className="red" />
                     </Col>
                 </Row>
-                <APILoginForm />
+                <APILoginForm  {...this.state}/>
                 <DefectUploadForm />
             </div>
         )

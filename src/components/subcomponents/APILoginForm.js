@@ -6,8 +6,23 @@ import helpers from "../../utils/helpers";
 
 
 class APILoginForm extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        // this.state = {
+        //     token: props.token,
+        //     uri: props.uri
+        // }
+        console.log("Props: ",props);
+        this.loginAPI = this.loginAPI.bind(this);
+    }
+
+    componentDidMount(){
+        console.log(this.props.token);
+    
+    }
+    
+    componentDidUpdate() {
+        console.log("Parent State:", this.props.projectID);
     }
 
     loginAPI() {
@@ -17,8 +32,10 @@ class APILoginForm extends Component {
             password: document.getElementById("password").value.trim()
         };
 
-        helpers.authenticateUser(employeeCredentials);
-
+        // helpers.authenticateUser(employeeCredentials);
+        this.setState({
+            projectID: 45705,
+        })
     }
 
     render() {
