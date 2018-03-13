@@ -29,11 +29,11 @@ class Defects extends Component {
     render() {
         return (
             <div className="container-50">
-                <Row>
+                {/* <Row>
                     <Col s={12}>
                         <ProgressBar progress={50} className="red" />
                     </Col>
-                </Row>
+                </Row> */}
                 <APILoginForm  {...this.state}/>
                 <DefectUploadForm />
             </div>

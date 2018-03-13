@@ -25,14 +25,6 @@ body{
      color: #5d666f;
 }
 
-.breadcrumb, .breadcrumb:last-child {
-    color: #5d666f;
-}
-
-.breadcrumbs-nav{
-    margin-top: 2%;
-}
-
 div#main-section {
     min-height: 100vh;
     display: flex;
@@ -153,3 +145,12 @@ ul.dropdown-content li span {
     font-style: italic;
 }
 
+.login-instructions {
+    width: 85%;
+    margin: 20px auto;
+    line-height: 22px;
+}
+
+.card-content .btn {
+    margin: 15px;
+}

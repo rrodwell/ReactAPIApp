@@ -32,21 +32,23 @@ class APILoginForm extends Component {
             password: document.getElementById("password").value.trim()
         };
 
-        // helpers.authenticateUser(employeeCredentials);
-        this.setState({
-            projectID: 45705,
-        })
+        helpers.authenticateUser(employeeCredentials);
+
     }
 
     render() {
         return (
-            <Card className="card-component">
-                <h5>qTest API Login</h5>
+            <Card className="card-component center">
+                <h4>API Login - qTest User</h4>
+                <div className="login-instructions">
+                    <p><em>Please enter the email and password for the generic API user for your project. If you do not know these credentials, please contact <strong>Amy Hartman</strong> for assistance.</em></p>
+                </div>
                 <Row>
-                    <Input s={8} type="email" label="Username" id="email" />
-                    <Input s={8} type="password" label="Password" id="password" />
+                    <Input s={12} type="email" label="Username" id="email" />
+                    <Input s={12} type="password" label="Password" id="password" />
+                    <Button className="red darken-1 right" node="a" onClick={this.loginAPI}>Test</Button>
                 </Row>
-                <Button className="red darken-1" node="a" onClick={this.loginAPI}>Test</Button>
+                
             </Card>
         )
     }
