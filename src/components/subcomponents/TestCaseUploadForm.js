@@ -8,36 +8,36 @@ import helpers from "../../utils/helpers";
 import $ from "jquery";
 import Papa from "papaparse";
 
-class DefectUploadForm extends Component {
+class TestCaseUploadForm extends Component {
     constructor() {
         super();
     }
 
-    readDefectCSV() {
+    readCSV() {
         const parseFile = $("#file-upload")[0].files[0]
         const files = $('#file-upload')[0].files;
-    
+
         let options = {
             'header': true,
-            complete: function(){
+            complete: function () {
                 var results = arguments[0].data;
-                console.log("Results:",results);
-                helpers.createDefects(results);
+                // console.log("Results:", results);
+                helpers.createTestCase(results);
             },
-            error: function(error,file){
-                console.log("ERROR:",error, file)
+            error: function (error, file) {
+                console.log("ERROR:", error, file)
             }
         };
 
-        if (files.length > 0){
-            Papa.parse(parseFile,options);
-		} else {
-			console.log("This file is empty.");
-		}
+        if (files.length > 0) {
+            Papa.parse(parseFile, options);
+        } else {
+            console.log("This file is empty.");
+        }
 
     }
 
-    openFile () {
+    openFile() {
         console.log("upload");
         $('#file-upload').trigger('click');
     }
@@ -47,7 +47,7 @@ class DefectUploadForm extends Component {
             <Card className="card-component center">
                 <h4>Csv File Upload</h4>
                 <div className="instructions">
-                    <p><em>Please enter the email and password for the generic API user for your project. If you do not know these credentials, please contact <strong>Amy Hartman</strong> for assistance.</em></p>
+                    <p><em>Export Test Cases from Jira in the form of an <strong>Excel File </strong>. Convert this file to CSV before uploading it here. For more detailed steps, please visit www.help.cfahome.com/testcase</em></p>
                 </div>
                 <div className="form">
                     <Row>
@@ -55,22 +55,20 @@ class DefectUploadForm extends Component {
                             <Button className="red darken-1" node="a" onClick={this.openFile}>
                                 <span>Select</span>
                                 <input id="file-upload" type="file"
-                                style={{
-                                    display: "none"
-                                }} />
+                                    style={{
+                                        display: "none"
+                                    }} />
                             </Button>
                             <div className="file-path-wrapper">
                                 <input className="file-path" type="text" />
-                            </div> 
+                            </div>
                         </div>
-                        <Button className="red darken-1 right" node="a" onClick={this.readDefectCSV}>Upload</Button>
+                        <Button className="red darken-1 right" node="a" onClick={this.readCSV}>Upload</Button>
                     </Row>
-                    
-                   
                 </div>
             </Card>
         )
     }
 };
 
-export default DefectUploadForm;
+export default TestCaseUploadForm;

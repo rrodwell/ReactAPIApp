@@ -5,6 +5,9 @@ import CardComponent from './CardComponent';
 import APILoginForm from './APILoginForm';
 import DefectUploadForm from './DefectUploadForm';
 import SquareButton from './SquareButton';
+import ProjectInfoForm from './ProjectInfoForm';
+import TestCaseUploadForm from './TestCaseUploadForm';
+
 // import JiraTestCaseUploadForm 
 
 module.exports = {
@@ -15,4 +18,6 @@ module.exports = {
   CenterDiv,
   CardComponent,
   SquareButton,
+  ProjectInfoForm,
+  TestCaseUploadForm,
 };

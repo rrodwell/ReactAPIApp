@@ -162,7 +162,61 @@ const helpers = {
             // console.log(obj.body);
         }
 
-    }
+    },
+
+    createTestCase: function (testCaseArr) {
+
+        var allTestCases = [];
+
+        var fullTestCase = {
+            "name": "",
+            "test_steps": [], //Array
+            "parent_id": "", //ID number
+            "description": "",
+        };
+
+        var testSteps = [];
+
+        for (var i = 0; i < testCaseArr.length - 1; i++) {  
+
+            var project = testCaseArr[i].Project;
+            var key = testCaseArr[i].Key;
+            var summary = testCaseArr[i].Summary;
+            var description = testCaseArr[i].Description;
+            
+            // console.log(project,key,summary,description)
+
+            if(project != ""){
+                // console.log(testCaseArr[i])
+                 if(testSteps.length > 0) {
+                    // fullTestCase.test_steps = testSteps;
+                    // allTestCases.push(fullTestCase);
+                    // testSteps = [];
+                    console.log("yay")
+                 } else {
+                    fullTestCase.name = project.concat(": ",key, " ", summary);
+                     fullTestCase.description = description;
+                 }
+
+            } else {
+
+                var steps = {
+                    "description": testCaseArr[i].TestStep + " " + testCaseArr[i].TestData,
+                    "expected": testCaseArr[i].ExpectedResult
+                };
+
+                testSteps.push(steps);
+            }
+            
+
+
+            // allTestCases.push(fullTestCase);
+            // console.log(testCaseArr[i]);
+        }
+
+        // helpers.submitDefect(allDefects);
+        console.log(testSteps);
+    },
 
 };
 

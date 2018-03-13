@@ -39,15 +39,17 @@ class APILoginForm extends Component {
     render() {
         return (
             <Card className="card-component center">
-                <h4>API Login - qTest User</h4>
-                <div className="login-instructions">
+                <h4>qTest User Login</h4>
+                <div className="instructions">
                     <p><em>Please enter the email and password for the generic API user for your project. If you do not know these credentials, please contact <strong>Amy Hartman</strong> for assistance.</em></p>
                 </div>
-                <Row>
-                    <Input s={12} type="email" label="Username" id="email" />
-                    <Input s={12} type="password" label="Password" id="password" />
-                    <Button className="red darken-1 right" node="a" onClick={this.loginAPI}>Test</Button>
-                </Row>
+                <div className="container form">
+                    <Row>
+                        <Input s={12} type="email" label="Username" id="email" />
+                        <Input s={12} type="password" label="Password" id="password" />
+                        <Button className="red darken-1 right" node="a" onClick={this.loginAPI}>Sign In</Button>
+                    </Row>
+                </div>
                 
             </Card>
         )

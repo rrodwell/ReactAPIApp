@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col, Card, ProgressBar, Input, Button } from "react-materialize";
 
-import { APILoginForm, DefectUploadForm } from '../subcomponents';
+import { APILoginForm, DefectUploadForm, ProjectInfoForm } from '../subcomponents';
 
 //Helpers
 import helpers from "../../utils/helpers";
@@ -28,13 +28,14 @@ class Defects extends Component {
 
     render() {
         return (
-            <div className="container-50">
-                {/* <Row>
+            <div className="container-40">
+                <Row>
                     <Col s={12}>
-                        <ProgressBar progress={50} className="red" />
+                        <ProgressBar progress={33} className="red" />
                     </Col>
-                </Row> */}
+                </Row>
                 <APILoginForm  {...this.state}/>
+                <ProjectInfoForm />
                 <DefectUploadForm />
             </div>
         )

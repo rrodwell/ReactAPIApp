@@ -14,7 +14,9 @@ class NavbarComponent extends Component {
     render() {
         return (
             <CardPanel className="card-nav">
-                <img href="/" src="./assets/img/CFA_ScriptLogo/Red/CFA_ScriptLogo_Red_RGB.png" />
+                <a href="/">
+                    <img src="./assets/img/CFA_ScriptLogo/Red/CFA_ScriptLogo_Red_RGB.png" />
+                </a>
             </CardPanel>
         )
     }

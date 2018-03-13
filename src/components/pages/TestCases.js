@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col, Card, ProgressBar } from "react-materialize";
-
+import { APILoginForm, TestCaseUploadForm } from '../subcomponents';
 class TestCases extends Component {
   constructor() {
     super();
@@ -14,15 +14,14 @@ class TestCases extends Component {
 
   render() {
     return (
-        <div className="container-50">
+        <div className="container-40">
           <Row>
             <Col s={12}>
-              <ProgressBar progress={this.props.progress} className="red"/>
+              <ProgressBar progress={33} className="red"/>
             </Col>
           </Row>
-          <Card className="card-component">
-              {this.props.children}
-          </Card>
+          <APILoginForm/>
+          <TestCaseUploadForm/>
         </div>
     )
   }

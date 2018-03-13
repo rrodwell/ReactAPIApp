@@ -57,9 +57,9 @@ main {
     padding: 0 15px;
 }
 
-.container-50 {
-    width: 50%;
-    margin: 10% auto;
+.container-40 {
+    width: 40%;
+    margin: 5% auto;
 }
 
 [type="checkbox"]+label::before,
@@ -128,6 +128,10 @@ ul.dropdown-content li span {
     padding: 15px;
 }
 
+.card-component h4 {
+    text-transform: uppercase;
+}
+
 .row .icon-col {
     padding: 0 5px;
 }
@@ -145,12 +149,21 @@ ul.dropdown-content li span {
     font-style: italic;
 }
 
-.login-instructions {
-    width: 85%;
+.instructions {
+    width: 80%;
     margin: 20px auto;
     line-height: 22px;
 }
 
-.card-content .btn {
+.form {
+    margin-top: 25px;
+}
+
+.form .btn {
     margin: 15px;
+}
+
+.file-field .btn {
+    height: 36px;
+    line-height: 36px;
 }
