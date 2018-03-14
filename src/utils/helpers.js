@@ -10,6 +10,8 @@ const helpers = {
 
         sessionStorage.setItem('uri', credentials.uri);
 
+        const proxyurl = "https://cors-anywhere.herokuapp.com/";
+
         let url = credentials.uri + 'oauth/token';
 
         let data = qs.stringify({
@@ -32,8 +34,8 @@ const helpers = {
 
         let token;
 
-        fetch(url, obj).then(res => res.json())
-            .catch(error => console.error('Error:', error))
+        fetch(proxyurl+url, obj)
+            .then(res => res.json())
             .then(loginResponse => {
                 if (loginResponse.access_token != null){
                     token = loginResponse.access_token;
@@ -42,8 +44,9 @@ const helpers = {
                 } else {
                     alert('Incorrect Credentials!')
                 }
-                console.log(loginResponse)
-            });
+                // console.log(loginResponse)
+            })
+            .catch(error => console.error('Error:', error));
     },
 
     createDefects: function(defectsArr) {
@@ -129,6 +132,8 @@ const helpers = {
 
         let sessionURI = sessionStorage.getItem('uri');
         let projectID = '45705';
+
+        const proxyurl = "https://cors-anywhere.herokuapp.com/";
         let url = sessionURI + 'api/v3/projects/'+projectID+'/defects';
 
         for (let i = 0; i < defectList.length; i++){
@@ -150,12 +155,13 @@ const helpers = {
 
             // console.log('Data:', data);
 
-            fetch(url, obj).then(res => res.json())
-                .catch(error => console.error('Error:', error))
+            fetch(proxyurl+url, obj)
+                .then(res => res.json())
                 .then(response => {
                     console.log(response);
                     // console.log(obj.body.qTitle);
-                });
+                })
+                .catch(error => console.error('Error:', error));
             // console.log(obj.body);
         }
 
@@ -211,6 +217,8 @@ const helpers = {
 
         let sessionURI = sessionStorage.getItem('uri');
         let projectID = '45705';
+
+        const proxyurl = "https://cors-anywhere.herokuapp.com/";
         let url = sessionURI + 'api/v3/projects/'+projectID+'/test-cases';
 
 
@@ -227,11 +235,12 @@ const helpers = {
                 body: JSON.stringify(testcases[i]),
             }
 
-            // fetch(url, obj).then(res => res.json())
-            //     .catch(error => console.error('Error:', error))
-            //     .then(response => {
-            //         console.log(response);
-            //     });
+            fetch(proxyurl+url, obj)
+                .then(res => res.json())
+                .then(response => {
+                    console.log(response);
+                })
+                .catch(error => console.error('Error:', error));
             // console.log(JSON.stringify(obj.body));
         }
     },
