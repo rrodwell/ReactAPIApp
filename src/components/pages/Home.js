@@ -23,10 +23,10 @@ class Home extends Component {
         },
         {
           uKey: 2,
-          header: 'Other Call',
-          description: 'Make another call',
+          header: 'Bump KPS',
+          description: 'Bump orders virtually on KPS',
           icon: 'import_export',
-          url: '',
+          url: '/kps',
         },
         {
           uKey: 3,

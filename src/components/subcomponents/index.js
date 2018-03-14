@@ -7,6 +7,7 @@ import DefectUploadForm from './DefectUploadForm';
 import SquareButton from './SquareButton';
 import ProjectInfoForm from './ProjectInfoForm';
 import TestCaseUploadForm from './TestCaseUploadForm';
+import KPSBumpForm from './KPSBumpForm';
 
 // import JiraTestCaseUploadForm 
 
@@ -20,4 +21,6 @@ module.exports = {
   SquareButton,
   ProjectInfoForm,
   TestCaseUploadForm,
+  KPSBumpForm
+
 };

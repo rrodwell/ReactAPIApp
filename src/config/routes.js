@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, IndexRoute } from 'react-router-dom';
 import Main from './../components/Main';
-import { Home, TestCases, Defects, Okta } from './../components/pages';
+import { Home, TestCases, Defects, Okta, KPS } from './../components/pages';
 // import { LoginComponent } from '../components/common';
 
 const routes = (
@@ -14,7 +14,7 @@ const routes = (
       <Route path='/defects' component={Defects} />
       {/* <Route path='/upload' component={UploadDefects} /> */}
       <Route path='/okta' component={Okta} />
-
+      <Route path='/kps' component={KPS} />
     </Main>
   </Router>
 );

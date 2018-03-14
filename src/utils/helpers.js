@@ -42,7 +42,7 @@ const helpers = {
                 } else {
                     alert('Incorrect Credentials!')
                 }
-                // console.log(loginResponse)
+                console.log(loginResponse)
             });
     },
 
