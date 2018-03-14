@@ -9,9 +9,9 @@ class Okta extends Component {
     componentDidMount() {
         window.scrollTo(0, 0);
 
-        var orgUrl = 'https://cfahome.com/';
-        var redirectUrl = 'http://ryanrodwell.com';
-        var oktaSignIn = new OktaSignIn({
+        let orgUrl = 'https://cfahome.com/';
+        let redirectUrl = 'http://ryanrodwell.com';
+        let oktaSignIn = new OktaSignIn({
             baseUrl: orgUrl
         });
 

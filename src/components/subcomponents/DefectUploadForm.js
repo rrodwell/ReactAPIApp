@@ -20,7 +20,7 @@ class DefectUploadForm extends Component {
         let options = {
             'header': true,
             complete: function(){
-                var results = arguments[0].data;
+                let results = arguments[0].data;
                 console.log('Results:',results);
                 helpers.createDefects(results);
             },

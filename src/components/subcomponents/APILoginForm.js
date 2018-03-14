@@ -26,7 +26,7 @@ class APILoginForm extends Component {
     }
 
     loginAPI() {
-        var employeeCredentials = {
+        let employeeCredentials = {
             uri: 'https://chickfila.qtestnet.com/',
             email: document.getElementById('email').value.trim(),
             password: document.getElementById('password').value.trim()
