@@ -134,6 +134,7 @@ const helpers = {
         let projectID = '45705';
 
         const proxyurl = "https://cors-anywhere.herokuapp.com/";
+
         let url = sessionURI + 'api/v3/projects/'+projectID+'/defects';
 
         for (let i = 0; i < defectList.length; i++){
@@ -235,7 +236,7 @@ const helpers = {
                 body: JSON.stringify(testcases[i]),
             }
 
-            fetch(proxyurl+url, obj)
+            fetch(url, obj)
                 .then(res => res.json())
                 .then(response => {
                     console.log(response);
