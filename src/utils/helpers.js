@@ -21,7 +21,7 @@ const helpers = {
         const header = {
             "Authorization": "Basic " + base64.encode(credentials.email + ":"),
             "Content-Type": "application/x-www-form-urlencoded",
-            // "Access-Control-Allow-Origin" :
+            "Access-Control-Allow-Origin": "*",
 
         }
 
@@ -141,7 +141,7 @@ const helpers = {
             const header = {
                 "Authorization": "bearer " + sessionStorage.getItem("token"),
                 "Content-Type": "application/json",
-                // "Access-Control-Allow-Origin" :
+                "Access-Control-Allow-Origin": "*",
 
             }
 
@@ -222,8 +222,7 @@ const helpers = {
             const header = {
                 "Authorization": "bearer " + sessionStorage.getItem("token"),
                 "Content-Type": "application/json",
-                // "Access-Control-Allow-Origin" :
-
+                "Access-Control-Allow-Origin" : "*",
             }
 
             const obj = {
