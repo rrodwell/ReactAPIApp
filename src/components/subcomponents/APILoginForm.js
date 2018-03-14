@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Row, Col, Card, Input, Button } from "react-materialize";
+import { Row, Col, Card, Input, Button } from 'react-materialize';
 
 //Helpers
-import helpers from "../../utils/helpers";
+import helpers from '../../utils/helpers';
 
 
 class APILoginForm extends Component {
@@ -12,7 +12,7 @@ class APILoginForm extends Component {
         //     token: props.token,
         //     uri: props.uri
         // }
-        // console.log("Props: ",props);
+        // console.log('Props: ',props);
         this.loginAPI = this.loginAPI.bind(this);
     }
 
@@ -22,14 +22,14 @@ class APILoginForm extends Component {
     }
 
     componentDidUpdate() {
-        console.log("Parent State:", this.props.projectID);
+        console.log('Parent State:', this.props.projectID);
     }
 
     loginAPI() {
         var employeeCredentials = {
-            uri: "https://chickfila.qtestnet.com/",
-            email: document.getElementById("email").value.trim(),
-            password: document.getElementById("password").value.trim()
+            uri: 'https://chickfila.qtestnet.com/',
+            email: document.getElementById('email').value.trim(),
+            password: document.getElementById('password').value.trim()
         };
 
         helpers.authenticateUser(employeeCredentials);
@@ -38,16 +38,16 @@ class APILoginForm extends Component {
 
     render() {
         return (
-            <Card className="card-component center">
+            <Card className='card-component center'>
                 <h4>qTest User Login</h4>
-                <div className="instructions">
+                <div className='instructions'>
                     <p><em>Please enter the email and password for the generic API user for your project. If you do not know these credentials, please contact <strong>Amy Hartman</strong> for assistance.</em></p>
                 </div>
-                <div className="container form">
+                <div className='container form'>
                     <Row>
-                        <Input s={12} type="email" label="Username" id="email" />
-                        <Input s={12} type="password" label="Password" id="password" />
-                        <Button className="red darken-1 right" node="a" onClick={this.loginAPI}>Sign In</Button>
+                        <Input s={12} type='email' label='Username' id='email' />
+                        <Input s={12} type='password' label='Password' id='password' />
+                        <Button className='red darken-1 right' node='a' onClick={this.loginAPI}>Sign In</Button>
                     </Row>
                 </div>
 

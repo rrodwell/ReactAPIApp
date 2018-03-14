@@ -1,5 +1,5 @@
 //Packages
-import fetch from "isomorphic-fetch";
+import fetch from 'isomorphic-fetch';
 import base64 from 'base-64';
 import qs from 'qs';
 
@@ -8,112 +8,111 @@ const helpers = {
 
     authenticateUser: function(credentials) {
 
-        sessionStorage.setItem("uri", credentials.uri);
+        sessionStorage.setItem('uri', credentials.uri);
 
-        const url = credentials.uri + "oauth/token";
+        let url = credentials.uri + 'oauth/token';
 
-        const data = qs.stringify({
-            "grant_type": "password",
-            "username": credentials.email,
-            "password": credentials.password,
+        let data = qs.stringify({
+            'grant_type': 'password',
+            'username': credentials.email,
+            'password': credentials.password,
         });
 
-        const header = {
-            "Authorization": "Basic " + base64.encode(credentials.email + ":"),
-            "Content-Type": "application/x-www-form-urlencoded",
-            "Access-Control-Allow-Origin": "*",
+        let header = {
+            'Authorization': 'Basic ' + base64.encode(credentials.email + ':'),
+            'Content-Type': 'application/x-www-form-urlencoded',
+        };
 
-        }
-
-        const obj = {
-            method: "POST",
+        let obj = {
+            method: 'POST',
             headers: header,
-            body: data
+            body: data,
         }
 
 
         let token;
 
         fetch(url, obj).then(res => res.json())
-            .catch(error => console.error("Error:", error))
+            .catch(error => console.error('Error:', error))
             .then(loginResponse => {
                 if (loginResponse.access_token != null){
                     token = loginResponse.access_token;
-                    console.log("Token", token);
-                    sessionStorage.setItem("token",token);
+                    console.log('Token', token);
+                    sessionStorage.setItem('token',token);
                 } else {
-                    alert("Incorrect Credentials!")
+                    alert('Incorrect Credentials!')
                 }
+                // console.log(loginResponse)
             });
     },
 
     createDefects: function(defectsArr) {
 
-        var allDefects =[];
+        let allDefects =[];
 
-        for(var i =0; i < defectsArr.length-1; i++){
+        for(let i =0; i < defectsArr.length-1; i++){
 
-            var key = defectsArr[i].Key;
-            var summary = defectsArr[i].Summary;
-            var description = defectsArr[i].Description;
-            var label = defectsArr[i].Labels;
-            var status = defectsArr[i].Status;
-            var priority = defectsArr[i].Priority;
-            var created = defectsArr[i].Created;
-            var creator = defectsArr[i].Creator;
-            var version = defectsArr[i].AffectedVersion;
+            let key = defectsArr[i].Key;
+            let summary = defectsArr[i].Summary;
+            let description = defectsArr[i].Description;
+            let label = defectsArr[i].Labels;
+            let status = defectsArr[i].Status;
+            let priority = defectsArr[i].Priority;
+            let created = defectsArr[i].Created;
+            let creator = defectsArr[i].Creator;
+            let version = defectsArr[i].AffectedVersion;
 
-            var newLine = "\n";
+            let newLine = '\n';
 
-            var qTitle = key.concat(": ", summary);
-            var qDescription = description.concat(newLine,newLine,"Version: ",version, newLine,"Labels: ", label, newLine, "Creator: ", creator, newLine, "Created At: ", created);
-            var qStatus = "";
-            var qSeverity = "";
+            let qTitle = key.concat(': ', summary);
+            let qDescription = description.concat(newLine,newLine,'Version: ',version, newLine,'Labels: ', label, newLine, 'Creator: ', creator, newLine, 'Created At: ', created);
+            let qStatus = '';
+            let qSeverity = '';
 
             //Set qTest Severity
-            if (priority == "1.Critical"){
+            if (priority == '1.Critical'){
                 qSeverity = 10305;
-            } else if (priority == "2.High"){
+            } else if (priority == '2.High'){
                 qSeverity = 10304;
-            } else if (priority == "3.Medium"){
+            } else if (priority == '3.Medium'){
                 qSeverity = 10303;
-            } else if (priority == "4.Low") {
+            } else if (priority == '4.Low') {
                 qSeverity = 10302;
             } else {
                 qSeverity = 10301;
             }
 
             //Set qTest Status
-            // if (status == "Open") {
+            // if (status == 'Open') {
             //     qStatus = 10001;
             // } else
 
-            if (status == "Closed") {
+            if (status == 'Closed') {
                 qStatus = 10005;
-            } else if (status == "Watch") {
+            } else if (status == 'Watch') {
                 qStatus = 1108485;
-            } else if (status == "Resolved") {
+            } else if (status == 'Resolved') {
                 qStatus = 10005;
             } else {
                 qStatus = 10001;
             }
 
-            var defectProps = [
+            let defectProps = [
                 {
-                    "field_id": 2637217,
-                    "field_value": qTitle
+                    'field_id': 2637217,
+                    'field_value': qTitle
                 },
                 {
-                    "field_id": 2637220,
-                    "field_value": qDescription
+                    'field_id': 2637220,
+                    'field_value': qDescription
                 },
                 {
-                    "field_id": 2637222,
-                    "field_value": qSeverity
+                    'field_id': 2637222,
+                    'field_value': qSeverity
                 },
                 {
-                    "field_id": 2637230,
-                    "field_value": qStatus
+                    'field_id': 2637230,
+                    'field_value': qStatus
                 }
 
             ];
@@ -126,35 +125,33 @@ const helpers = {
     },
 
     submitDefect: function(defectList){
-        console.log("submitting...");
+        console.log('submitting...');
 
-        var sessionURI = sessionStorage.getItem("uri");
-        var projectID = "45705";
-        var url = sessionURI + "api/v3/projects/"+projectID+"/defects";
+        let sessionURI = sessionStorage.getItem('uri');
+        let projectID = '45705';
+        let url = sessionURI + 'api/v3/projects/'+projectID+'/defects';
 
-        for (var i = 0; i < defectList.length; i++){
+        for (let i = 0; i < defectList.length; i++){
 
-            var data = {
-                "properties": defectList[i]
+            let data = {
+                'properties': defectList[i]
             };
 
-            const header = {
-                "Authorization": "bearer " + sessionStorage.getItem("token"),
-                "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": "*",
-
+            let header = {
+                'Authorization': 'bearer ' + sessionStorage.getItem('token'),
+                'Content-Type': 'application/json',
             }
 
-            const obj = {
-                method: "POST", // or "PUT"
+            let obj = {
+                method: 'POST', // or 'PUT'
                 headers: header,
                 body: JSON.stringify(data),
             }
 
-            // console.log("Data:", data);
+            // console.log('Data:', data);
 
             fetch(url, obj).then(res => res.json())
-                .catch(error => console.error("Error:", error))
+                .catch(error => console.error('Error:', error))
                 .then(response => {
                     console.log(response);
                     // console.log(obj.body.qTitle);
@@ -166,37 +163,37 @@ const helpers = {
 
     createTestCase: function (testCaseArr) {
 
-        var allTestCases = [];
-        var count = 0;
+        let allTestCases = [];
+        let count = 0;
 
-        for (var i = 0; i < testCaseArr.length; i++) {
+        for (let i = 0; i < testCaseArr.length; i++) {
 
-            var project = testCaseArr[i].Project;
-            var key = testCaseArr[i].Key;
-            var summary = testCaseArr[i].Summary;
-            var description = testCaseArr[i].Description;
+            let project = testCaseArr[i].Project;
+            let key = testCaseArr[i].Key;
+            let summary = testCaseArr[i].Summary;
+            let description = testCaseArr[i].Description;
 
-            var fullTestCase = {
-                "name": "",
-                "test_steps": [], //Array
-                "parent_id": 4541473, //ID number
-                "description": "",
+            let fullTestCase = {
+                'name': '',
+                'test_steps': [], //Array
+                'parent_id': 4541473, //ID number
+                'description': '',
             };
 
 
-            if(project != ""){
+            if(project != ''){
 
                 count += 1;
-                fullTestCase.name = project.concat(": ",key, " ", summary);
+                fullTestCase.name = project.concat(': ',key, ' ', summary);
                 fullTestCase.description = description;
 
                 allTestCases.push(fullTestCase);
 
             } else {
 
-                var steps = {
-                    "description": testCaseArr[i].TestStep + " | Test Data: " + testCaseArr[i].TestData,
-                    "expected": testCaseArr[i].ExpectedResult
+                let steps = {
+                    'description': testCaseArr[i].TestStep + ' | Test Data: ' + testCaseArr[i].TestData,
+                    'expected': testCaseArr[i].ExpectedResult
                 };
 
                 allTestCases[count-1].test_steps.push(steps);
@@ -205,34 +202,33 @@ const helpers = {
         }
 
         helpers.submitTestCase(allTestCases);
-        console.log("All Test:",allTestCases);
+        console.log('All Test:',allTestCases);
 
     },
 
     submitTestCase: function(testcases) {
-        console.log("submitting...");
+        console.log('submitting...');
 
-        var sessionURI = sessionStorage.getItem("uri");
-        var projectID = "45705";
-        var url = sessionURI + "api/v3/projects/"+projectID+"/test-cases";
+        let sessionURI = sessionStorage.getItem('uri');
+        let projectID = '45705';
+        let url = sessionURI + 'api/v3/projects/'+projectID+'/test-cases';
 
 
-        for (var i = 0; i < testcases.length; i++){
+        for (let i = 0; i < testcases.length; i++){
 
-            const header = {
-                "Authorization": "bearer " + sessionStorage.getItem("token"),
-                "Content-Type": "application/json",
-                "Access-Control-Allow-Origin" : "*",
+            let header = {
+                'Authorization': 'bearer ' + sessionStorage.getItem('token'),
+                'Content-Type': 'application/json',
             }
 
-            const obj = {
-                method: "POST", // or "PUT"
+            let obj = {
+                method: 'POST', // or 'PUT'
                 headers: header,
                 body: JSON.stringify(testcases[i]),
             }
 
             fetch(url, obj).then(res => res.json())
-                .catch(error => console.error("Error:", error))
+                .catch(error => console.error('Error:', error))
                 .then(response => {
                     console.log(response);
                 });

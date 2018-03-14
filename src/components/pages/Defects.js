@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { Row, Col, Card, ProgressBar, Input, Button } from "react-materialize";
+import { Row, Col, Card, ProgressBar, Input, Button } from 'react-materialize';
 
 import { APILoginForm, DefectUploadForm, ProjectInfoForm } from '../subcomponents';
 
 //Helpers
-import helpers from "../../utils/helpers";
+import helpers from '../../utils/helpers';
 
 //Packages
-import fetch from "isomorphic-fetch";
+import fetch from 'isomorphic-fetch';
 import base64 from 'base-64';
 import qs from 'qs';
 
@@ -15,9 +15,9 @@ class Defects extends Component {
     constructor() {
         super();
         this.state = {
-            token: "token1",
-            uri: "https://chickfila.qtestnet.com/",
-            projectID: "",
+            token: 'token1',
+            uri: 'https://chickfila.qtestnet.com/',
+            projectID: '',
         }
     }
 
@@ -28,10 +28,10 @@ class Defects extends Component {
 
     render() {
         return (
-            <div className="container-40">
+            <div className='container-40'>
                 <Row>
                     <Col s={12}>
-                        <ProgressBar progress={33} className="red" />
+                        <ProgressBar progress={33} className='red' />
                     </Col>
                 </Row>
                 <APILoginForm  {...this.state}/>

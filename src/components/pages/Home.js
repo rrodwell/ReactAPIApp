@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { CenterDiv, NavbarComponent, CardComponent, SquareButton } from '../subcomponents';
-import { Row, Col, Breadcrumb, MenuItem } from "react-materialize";
+import { Row, Col, Breadcrumb, MenuItem } from 'react-materialize';
 
 class Home extends Component {
   constructor() {
@@ -9,31 +9,31 @@ class Home extends Component {
       buttons: [
         {
           uKey: 0,
-          header: "Test Cases",
-          description: "Import Test Cases",
-          icon: "file_upload",
-          url: "/test-cases",
+          header: 'Test Cases',
+          description: 'Import Test Cases',
+          icon: 'file_upload',
+          url: '/test-cases',
         },
         {
           uKey: 1,
-          header: "Defects",
-          description: "Import Defects",
-          icon: "bug_report",
-          url: "/defects",
+          header: 'Defects',
+          description: 'Import Defects',
+          icon: 'bug_report',
+          url: '/defects',
         },
         {
           uKey: 2,
-          header: "Other Call",
-          description: "Make another call",
-          icon: "import_export",
-          url: "",
+          header: 'Other Call',
+          description: 'Make another call',
+          icon: 'import_export',
+          url: '',
         },
         {
           uKey: 3,
-          header: "Other Call",
-          description: "Make another call",
-          icon: "import_export",
-          url: "",
+          header: 'Other Call',
+          description: 'Make another call',
+          icon: 'import_export',
+          url: '',
         },
       ]
     }
@@ -45,19 +45,19 @@ class Home extends Component {
 
   render () {
     return (
-        <div className="container-93">
+        <div className='container-93'>
           <Row>
 
-            <Col s={12} className="">
+            <Col s={12} className=''>
               <Row>
                 <Col>
                   <h2 style={{
-                    fontFamily: "Apercu",
-                    fontSize: "2rem",
-                    marginBottom: "0.5rem"
+                    fontFamily: 'Apercu',
+                    fontSize: '2rem',
+                    marginBottom: '0.5rem'
                   }}>CFA QTEST API</h2>
                   <h5 style={{
-                    fontSize: "1.25rem"
+                    fontSize: '1.25rem'
                   }}>Importing tool for qTest</h5>
                 </Col>
               </Row>
