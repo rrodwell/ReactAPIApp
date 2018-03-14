@@ -12,15 +12,15 @@ class APILoginForm extends Component {
         //     token: props.token,
         //     uri: props.uri
         // }
-        console.log("Props: ",props);
+        // console.log("Props: ",props);
         this.loginAPI = this.loginAPI.bind(this);
     }
 
     componentDidMount(){
-        console.log(this.props.token);
-    
+        // console.log(this.props.token);
+
     }
-    
+
     componentDidUpdate() {
         console.log("Parent State:", this.props.projectID);
     }
@@ -50,7 +50,7 @@ class APILoginForm extends Component {
                         <Button className="red darken-1 right" node="a" onClick={this.loginAPI}>Sign In</Button>
                     </Row>
                 </div>
-                
+
             </Card>
         )
     }

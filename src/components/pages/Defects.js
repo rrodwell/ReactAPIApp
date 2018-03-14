@@ -35,7 +35,6 @@ class Defects extends Component {
                     </Col>
                 </Row>
                 <APILoginForm  {...this.state}/>
-                <ProjectInfoForm />
                 <DefectUploadForm />
             </div>
         )

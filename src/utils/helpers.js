@@ -70,7 +70,7 @@ const helpers = {
             var qStatus = "";
             var qSeverity = "";
 
-            //Set qTest Severity 
+            //Set qTest Severity
             if (priority == "1.Critical"){
                 qSeverity = 10305;
             } else if (priority == "2.High"){
@@ -83,11 +83,11 @@ const helpers = {
                 qSeverity = 10301;
             }
 
-            //Set qTest Status 
+            //Set qTest Status
             // if (status == "Open") {
             //     qStatus = 10001;
-            // } else 
-            
+            // } else
+
             if (status == "Closed") {
                 qStatus = 10005;
             } else if (status == "Watch") {
@@ -102,7 +102,7 @@ const helpers = {
                 {
                     "field_id": 2637217,
                     "field_value": qTitle
-                }, 
+                },
                 {
                     "field_id": 2637220,
                     "field_value": qDescription
@@ -115,7 +115,7 @@ const helpers = {
                     "field_id": 2637230,
                     "field_value": qStatus
                 }
-                
+
             ];
 
             allDefects.push(defectProps);
@@ -127,13 +127,13 @@ const helpers = {
 
     submitDefect: function(defectList){
         console.log("submitting...");
-        
+
         var sessionURI = sessionStorage.getItem("uri");
         var projectID = "45705";
         var url = sessionURI + "api/v3/projects/"+projectID+"/defects";
 
         for (var i = 0; i < defectList.length; i++){
-            
+
             var data = {
                 "properties": defectList[i]
             };
@@ -167,55 +167,78 @@ const helpers = {
     createTestCase: function (testCaseArr) {
 
         var allTestCases = [];
+        var count = 0;
 
-        var fullTestCase = {
-            "name": "",
-            "test_steps": [], //Array
-            "parent_id": "", //ID number
-            "description": "",
-        };
-
-        var testSteps = [];
-
-        for (var i = 0; i < testCaseArr.length - 1; i++) {  
+        for (var i = 0; i < testCaseArr.length; i++) {
 
             var project = testCaseArr[i].Project;
             var key = testCaseArr[i].Key;
             var summary = testCaseArr[i].Summary;
             var description = testCaseArr[i].Description;
-            
-            // console.log(project,key,summary,description)
+
+            var fullTestCase = {
+                "name": "",
+                "test_steps": [], //Array
+                "parent_id": 4541473, //ID number
+                "description": "",
+            };
+
 
             if(project != ""){
-                // console.log(testCaseArr[i])
-                 if(testSteps.length > 0) {
-                    // fullTestCase.test_steps = testSteps;
-                    // allTestCases.push(fullTestCase);
-                    // testSteps = [];
-                    console.log("yay")
-                 } else {
-                    fullTestCase.name = project.concat(": ",key, " ", summary);
-                     fullTestCase.description = description;
-                 }
+
+                count += 1;
+                fullTestCase.name = project.concat(": ",key, " ", summary);
+                fullTestCase.description = description;
+
+                allTestCases.push(fullTestCase);
 
             } else {
 
                 var steps = {
-                    "description": testCaseArr[i].TestStep + " " + testCaseArr[i].TestData,
+                    "description": testCaseArr[i].TestStep + " | Test Data: " + testCaseArr[i].TestData,
                     "expected": testCaseArr[i].ExpectedResult
                 };
 
-                testSteps.push(steps);
+                allTestCases[count-1].test_steps.push(steps);
             }
-            
 
-
-            // allTestCases.push(fullTestCase);
-            // console.log(testCaseArr[i]);
         }
 
-        // helpers.submitDefect(allDefects);
-        console.log(testSteps);
+        helpers.submitTestCase(allTestCases);
+        console.log("All Test:",allTestCases);
+
+    },
+
+    submitTestCase: function(testcases) {
+        console.log("submitting...");
+
+        var sessionURI = sessionStorage.getItem("uri");
+        var projectID = "45705";
+        var url = sessionURI + "api/v3/projects/"+projectID+"/test-cases";
+
+
+        for (var i = 0; i < testcases.length; i++){
+
+            const header = {
+                "Authorization": "bearer " + sessionStorage.getItem("token"),
+                "Content-Type": "application/json",
+                // "Access-Control-Allow-Origin" :
+
+            }
+
+            const obj = {
+                method: "POST", // or "PUT"
+                headers: header,
+                body: JSON.stringify(testcases[i]),
+            }
+
+            fetch(url, obj).then(res => res.json())
+                .catch(error => console.error("Error:", error))
+                .then(response => {
+                    console.log(response);
+                });
+            // console.log(JSON.stringify(obj));
+        }
     },
 
 };
