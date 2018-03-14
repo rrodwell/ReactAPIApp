@@ -1,44 +1,66 @@
-$("#login-api").on("click", function(){
+$(document).ready(function (){
+    
+    $('#sign-in').on('click', function(){
 
-    console.log("Login Button clicked")
-    const url = "https://chickfila.qtestnet.com/oauth/token";
+        console.log('Login Button clicked')
 
-    const data = qs.stringify({
-        "grant_type": "password",
-        "username": "ryanrodwell@gmail.com",
-        "password": "eg85CFA!",
-    });
-
-    const header = {
-        "Authorization": "Basic cnlhbnJvZHdlbGxAZ21haWwuY29tOg==",
-        "Content-Type": "application/x-www-form-urlencoded"
-    }
-
-    const obj = {
-        method: "POST", // or "PUT"
-        headers: header,
-        body: data
-    }
+        let employeeCredentials = {
+            uri: 'https://chickfila.qtestnet.com/',
+            email: document.getElementById('email').value.trim(),
+            password: document.getElementById('password').value.trim()
+        };
 
 
-    let token;
+        sessionStorage.setItem('uri', employeeCredentials.uri);
 
-    // fetch(url, obj).then(res => res)
-    //     .catch(error => console.error("Error:", error))
-    //     .then(loginResponse => {
-    //         token = loginResponse.access_token;
-    //         console.log("Success:", JSON.stringify(loginResponse));
-    //     });
+        let url = employeeCredentials.uri + 'api/v3/projects/45705/test-cases';
+        // https://chickfila.qtestnet.com/api/v3/projects/{{ProjectID}}/test-cases
 
-    $.ajax({
-        type: "POST",
-        url: url, // the endpoint
-        data: obj,
+        let data = JSON.stringify({
+            'grant_type': 'password',
+            'username': employeeCredentials.email,
+            'password': employeeCredentials.password,
+        });
 
-        success: function (response) {
-            console.log(response)
-            console.log("login successful!");
+        let header = {
+            'Authorization': 'bearer a99972bc-88a0-4f7a-8115-16dfe31e69a6',
+            'Content-Type': 'application/json',
+        };
+
+        let obj = {
+            method: 'POST',
+            headers: header,
+            body: data,
         }
+
+
+        let token;
+
+        // fetch(url, obj).then(res => res.json())
+        //     .catch(error => console.error('Error:', error))
+        //     .then(loginResponse => {
+        //         if (loginResponse.access_token != null) {
+        //             token = loginResponse.access_token;
+        //             console.log('Token', token);
+        //             sessionStorage.setItem('token', token);
+        //         } else {
+        //             alert('Incorrect Credentials!')
+        //         }
+        //         // console.log(loginResponse)
+        //     });
+
+
+        $.ajax({
+            type: 'GET',
+            url: url, // the endpoint
+            headers: header,
+            // data: data,
+
+            success: function (response) {
+                console.log(response)
+                console.log('login successful!');
+            }
+        });
 
     });
 });

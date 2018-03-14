@@ -23,6 +23,7 @@ class TestCaseUploadForm extends Component {
                 let results = arguments[0].data;
                 // console.log('Results:', results);
                 helpers.createTestCase(results);
+                $('#file-path').val('')
             },
             error: function (error, file) {
                 console.log('ERROR:', error, file)

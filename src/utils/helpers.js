@@ -227,12 +227,12 @@ const helpers = {
                 body: JSON.stringify(testcases[i]),
             }
 
-            fetch(url, obj).then(res => res.json())
-                .catch(error => console.error('Error:', error))
-                .then(response => {
-                    console.log(response);
-                });
-            // console.log(JSON.stringify(obj));
+            // fetch(url, obj).then(res => res.json())
+            //     .catch(error => console.error('Error:', error))
+            //     .then(response => {
+            //         console.log(response);
+            //     });
+            // console.log(JSON.stringify(obj.body));
         }
     },
 

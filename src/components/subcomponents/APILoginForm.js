@@ -4,7 +4,8 @@ import { Row, Col, Card, Input, Button } from 'react-materialize';
 //Helpers
 import helpers from '../../utils/helpers';
 
-
+//Packages
+import $ from 'jquery';
 class APILoginForm extends Component {
     constructor(props) {
         super(props);
@@ -28,12 +29,13 @@ class APILoginForm extends Component {
     loginAPI() {
         let employeeCredentials = {
             uri: 'https://chickfila.qtestnet.com/',
-            email: document.getElementById('email').value.trim(),
-            password: document.getElementById('password').value.trim()
+            email: $('#email').val().trim(),
+            password: $('#password').val().trim(),
         };
 
         helpers.authenticateUser(employeeCredentials);
-
+        $('#email').val('');
+        $('#password').val('');
     }
 
     render() {
@@ -47,7 +49,7 @@ class APILoginForm extends Component {
                     <Row>
                         <Input s={12} type='email' label='Username' id='email' />
                         <Input s={12} type='password' label='Password' id='password' />
-                        <Button className='red darken-1 right' node='a' onClick={this.loginAPI}>Sign In</Button>
+                        <Button className='red darken-1 right' onClick={this.loginAPI} node='a'>Sign In</Button>
                     </Row>
                 </div>
 
